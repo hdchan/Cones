@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1825301C-8D11-4C61-AEE2-CB7560A99EB5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Cones</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>69CA53886ED977BE688ABEF458FA903A6CD2289C</key>
+		<string>github.com:alanscarpa/cones.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Cones.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>69CA53886ED977BE688ABEF458FA903A6CD2289C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:alanscarpa/cones.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>69CA53886ED977BE688ABEF458FA903A6CD2289C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>69CA53886ED977BE688ABEF458FA903A6CD2289C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cones</string>
+		</dict>
+	</array>
+</dict>
+</plist>
