@@ -39,6 +39,8 @@
     }
     [self.locationManager startUpdatingLocation];
     
+    //Show user location with that cool, blue dot.
+    [self.mapView setShowsUserLocation:YES];
     
    
     
@@ -58,12 +60,37 @@
     
 }
 
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    
+    if (!self.isLocationSet){
+
+    CLLocationCoordinate2D zoomLocation;
+    
+    CLLocation *location = userLocation.location;
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    zoomLocation.latitude = coordinate.latitude;
+    zoomLocation.longitude= coordinate.longitude;
+    
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
+        
+    self.isLocationSet = YES;
+        
+    }
+    
+}
+
 
 // Wait for location callbacks
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
 
-    [self updateAndDisplayCurrentUserLocation];
+   // [self updateAndDisplayCurrentUserLocation];
     [self sendVendorLocation];
     [self updateAndDisplayVendorLocation];
   
@@ -71,7 +98,7 @@
 
 
 
-
+//Unused, but has some good methods and ideas.
 -(void)updateAndDisplayCurrentUserLocation {
     
     self.currentUserLocation = [self.locationManager location];
@@ -95,7 +122,7 @@
 
 -(void)sendVendorLocation {
     
-    CLLocation *location = [self.locationManager location];
+    CLLocation *location = [self.mapView userLocation].location;
     CLLocationCoordinate2D coordinate = [location coordinate];
     
     PFObject *vendorLocation = [PFObject objectWithClassName:@"VendorLocationHistory"];
@@ -110,15 +137,16 @@
 
 -(void)updateAndDisplayVendorLocation{
     
-    
-    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:self.currentUserLocation.coordinate.latitude longitude:self.currentUserLocation.coordinate.longitude];
+    CLLocation *location = [self.mapView userLocation].location;
+
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
     
     
     PFQuery *query = [PFQuery queryWithClassName:@"VendorLocationHistory"];
     
     // Create a PFQuery asking for all wall posts 100km of the user
     // We won't be showing all of the posts returned, 100km is our buffer
-    [query whereKey:@"geoPoint" nearGeoPoint:point withinMiles:5];
+    [query whereKey:@"geoPoint" nearGeoPoint:point withinMiles:1];
     
     // Include the associated PFUser objects in the returned data
     // [query includeKey:PAWParsePostUserKey];
@@ -128,6 +156,7 @@
     [query orderByDescending:@"createdAt"];
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        
         PFGeoPoint *location = [object objectForKey:@"geoPoint"];
         NSLog(@"\nLatitude: %f\nLongitude: %f", location.latitude, location.longitude);
         
@@ -142,13 +171,14 @@
     //
 }
 
-
+//
 //-(void)viewWillAppear:(BOOL)animated {
+//    
 //    [super viewWillAppear:animated];
 //    
 //    CLLocationCoordinate2D zoomLocation;
 //    
-//    CLLocation *location = [self.locationManager location];
+//    CLLocation *location = [self.mapView userLocation].location;
 //    CLLocationCoordinate2D coordinate = [location coordinate];
 //    
 //    zoomLocation.latitude = coordinate.latitude;
