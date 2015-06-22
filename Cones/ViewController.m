@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *locations;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
+@property (nonatomic) BOOL isLocationSet;
 
 @end
 #define METERS_PER_MILE 1609.344
@@ -31,6 +32,7 @@
     //[self displayEiffelTower];
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
+    self.isLocationSet = NO;
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
@@ -39,16 +41,16 @@
     
     
     // Display current location and zoom once.
-    CLLocation *location = [self.locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
-    MyAnnotation *myLocation = [[MyAnnotation alloc] init];
-    myLocation.longitude = coordinate.longitude;
-    myLocation.latitude = coordinate.latitude;
-    
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:@[myLocation]];
-    [self.mapView showAnnotations:@[myLocation] animated:YES];
+//    CLLocation *location = [self.locationManager location];
+//    CLLocationCoordinate2D coordinate = [location coordinate];
+//    
+//    MyAnnotation *myLocation = [[MyAnnotation alloc] init];
+//    myLocation.longitude = coordinate.longitude;
+//    myLocation.latitude = coordinate.latitude;
+//    
+//    [self.mapView removeAnnotations:self.mapView.annotations];
+//    [self.mapView addAnnotations:@[myLocation]];
+//    [self.mapView showAnnotations:@[myLocation] animated:YES];
     
     
 }
@@ -93,7 +95,13 @@
     
     [self.mapView removeAnnotations:self.mapView.annotations];
     [self.mapView addAnnotations:@[myLocation]];
-   // [self.mapView showAnnotations:@[myLocation] animated:YES];
+    
+    if (!self.isLocationSet){
+        [self.mapView showAnnotations:@[myLocation] animated:YES];
+        self.isLocationSet = YES;
+    }
+    
+   
 }
 
 
