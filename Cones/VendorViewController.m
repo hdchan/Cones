@@ -68,7 +68,12 @@
             
         }
         
-        NSLog(@"Error getting object: %@", error); // create new object
+        if (error) {
+            
+            NSLog(@"Error getting object: %@", error); // create new object
+            
+        }
+        
 
     }];
     
