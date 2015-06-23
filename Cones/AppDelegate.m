@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  Cones
 //
-//  Created by Henry Chan on 6/19/15.
-//  Copyright (c) 2015 Henry Chan. All rights reserved.
+//  Created by Henry Chan & Alan Scarpa on 6/19/15.
+//  Copyright (c) 2015 Henry Chan & Alan Scarpa. All rights reserved.
 //
 
 #import "AppDelegate.h"
