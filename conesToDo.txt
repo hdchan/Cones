@@ -1,0 +1,5 @@
+CONES -- TODO
+-------------
+
+1)  Create 2 classes - vendor/user
+2)  Set vendor's location to emit always

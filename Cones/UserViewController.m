@@ -6,23 +6,24 @@
 //  Copyright (c) 2015 Henry Chan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "UserViewController.h"
 #import <MapKit/MapKit.h>
 #import "MyAnnotation.h"
 #import <Parse/Parse.h>
 
 
-@interface ViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface UserViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) NSArray *locations;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic, strong) CLLocation *currentUserLocation;
 @property (nonatomic) BOOL isLocationSet;
+@property (nonatomic, strong) NSString *objectID;
 
 @end
 #define METERS_PER_MILE 1609.344
-@implementation ViewController
+@implementation UserViewController
 
 
 
@@ -92,8 +93,6 @@
 
    // [self updateAndDisplayCurrentUserLocation];
     [self sendVendorLocation];
-    [self updateAndDisplayVendorLocation];
-  
 }
 
 
@@ -123,13 +122,68 @@
 -(void)sendVendorLocation {
     
     CLLocation *location = [self.mapView userLocation].location;
+    
+    if (!location){
+        NSLog(@"Location is nil.  Do not send to Parse.");
+        return;
+    }
+    
+    
     CLLocationCoordinate2D coordinate = [location coordinate];
+ 
     
-    PFObject *vendorLocation = [PFObject objectWithClassName:@"VendorLocationHistory"];
-    vendorLocation[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+    PFQuery *query = [PFQuery queryWithClassName:@"VendorLocationHistory"];
+    [query whereKey:@"vendorName" equalTo:@"AlansTruck"];
+
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
+        if (error){
+            NSLog(@"Error upsert: %@", error);
+        }
+        
+        
+        if (!object){
+            NSLog(@"OBJECT WAS NIL! Let's make a new one!");
+            PFObject *vendorLocation = [PFObject objectWithClassName:@"VendorLocationHistory"];
+            vendorLocation[@"vendorName"] = @"AlansTruck";
+            vendorLocation[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+            [vendorLocation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+             {
+                 NSLog(@"The save attempt was: %i", succeeded);
+                 if (error){
+                     NSLog(@"Error saving: %@", error);
+                 } else {
+                    // self.objectID = [vendorLocation objectId];
+                    [self updateAndDisplayVendorLocation];
+                     NSLog(@"Saved location to Parse successfully!");
+                 }
+                 
+             }];
+
+        } else {
+            object[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+            [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+            {
+                NSLog(@"The save attempt was: %i", succeeded);
+                if (error){
+                    NSLog(@"Error saving: %@", error);
+                } else {
+                    [self updateAndDisplayVendorLocation];
+                     NSLog(@"Saved location to Parse successfully!");
+                }
+            }];
+           
+
+        }
+        
+       
     
-    [vendorLocation saveInBackground];
+    }];
     
+    
+    
+    
+   
+
     
     
 }
@@ -139,30 +193,37 @@
     
     CLLocation *location = [self.mapView userLocation].location;
 
+    
+    if (!location){
+        NSLog(@"Location is nil.  Do not update.");
+        return;
+    }
+    
     PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-    
-    
     PFQuery *query = [PFQuery queryWithClassName:@"VendorLocationHistory"];
     
-    // Create a PFQuery asking for all wall posts 100km of the user
-    // We won't be showing all of the posts returned, 100km is our buffer
-    [query whereKey:@"geoPoint" nearGeoPoint:point withinMiles:1];
     
     // Include the associated PFUser objects in the returned data
-    // [query includeKey:PAWParsePostUserKey];
+    // [query includeKey:@"vendorName"];
     
+    [query whereKey:@"vendorName" equalTo:@"AlansTruck"];
     // Limit the number of wall posts returned to 20
-    query.limit = 20;
-    [query orderByDescending:@"createdAt"];
+    //query.limit = 20;
+    
+   // [query orderByAscending:@"createdAt"];
+   // [query whereKey:@"geoPoint" nearGeoPoint:point withinMiles:2];
     
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
         
-        PFGeoPoint *location = [object objectForKey:@"geoPoint"];
-        NSLog(@"\nLatitude: %f\nLongitude: %f", location.latitude, location.longitude);
-        
         if (error){
             NSLog(@"There was an error:  %@", error);
+        } else {
+            PFGeoPoint *location = [object objectForKey:@"geoPoint"];
+            NSLog(@"\nLatitude: %f\nLongitude: %f", location.latitude, location.longitude);
         }
+        
+        
+        
         
     }];
     
