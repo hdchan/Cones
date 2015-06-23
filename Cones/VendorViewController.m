@@ -30,9 +30,12 @@
     
     NSString *vendorName = @"HenrysTruck";
     
-    PFQuery *query = [PFQuery queryWithClassName:@"VendorLocationHistory"];
+    NSString *queryClassName = @"VendorLocationHistory";
+    
+    PFQuery *query = [PFQuery queryWithClassName:queryClassName];
     
     [query whereKey:@"vendorName" equalTo:vendorName];
+    
     
     // Retrieving user data here
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *vendorData, NSError *error){
@@ -49,7 +52,7 @@
         } else {
             
             // Other wise we'll set up a new object to contain our new user data
-            self.currentVendorLocationParseData = [PFObject objectWithClassName:@"VendorLocationHistory"];
+            self.currentVendorLocationParseData = [PFObject objectWithClassName:queryClassName];
             
             self.currentVendorLocationParseData[@"vendorName"] = vendorName;
             
