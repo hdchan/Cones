@@ -16,7 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) MKUserLocation *currentVendorLocation;
-@property (nonatomic, strong) PFObject *currentVendorData;
+@property (nonatomic, strong) PFObject *currentVendorLocationParseData;
 
 @end
 
@@ -41,7 +41,7 @@
         
         if (vendorData){ // If an entry exists
             
-            self.currentVendorData = vendorData; // Set our instance variable
+            self.currentVendorLocationParseData = vendorData; // Set our instance variable
             
             [self.mapView setShowsUserLocation:YES]; // Zoom into the user's current location
             
@@ -49,11 +49,11 @@
         } else {
             
             // Other wise we'll set up a new object to contain our new user data
-            self.currentVendorData = [PFObject objectWithClassName:@"VendorLocationHistory"];
+            self.currentVendorLocationParseData = [PFObject objectWithClassName:@"VendorLocationHistory"];
             
-            self.currentVendorData[@"vendorName"] = vendorName;
+            self.currentVendorLocationParseData[@"vendorName"] = vendorName;
             
-            [self.currentVendorData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.currentVendorLocationParseData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 
                 if (succeeded) {
                     
@@ -101,9 +101,9 @@
 
 -(void)sendVendorLocationToParse:(CLLocation*)vendorLocation {
     
-    self.currentVendorData[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:vendorLocation.coordinate.latitude longitude:vendorLocation.coordinate.longitude];
+    self.currentVendorLocationParseData[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:vendorLocation.coordinate.latitude longitude:vendorLocation.coordinate.longitude];
     
-    [self.currentVendorData saveInBackground];
+    [self.currentVendorLocationParseData saveInBackground];
     
 }
 
