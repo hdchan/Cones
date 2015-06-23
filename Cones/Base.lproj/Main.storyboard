@@ -33,15 +33,15 @@
                                 <state key="normal" title="Ice Cream Eater">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" id="N7W-3T-BHQ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-A2-yMK">
                                 <rect key="frame" x="136" y="316" width="49" height="30"/>
                                 <state key="normal" title="Vendor">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="m7h-FS-YrU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="292" y="271"/>
         </scene>
-        <!--User View Controller-->
+        <!--Vendor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="UserViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="VendorViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="12B-rR-N7B"/>
                         <viewControllerLayoutGuide type="bottom" id="pPE-Zz-a7I"/>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="694" y="271"/>
+            <point key="canvasLocation" x="787" y="538"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzf-o0-KNN">

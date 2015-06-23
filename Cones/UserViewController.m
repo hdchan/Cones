@@ -54,17 +54,11 @@
     self.mapView.delegate = self;
 }
 
-- (void) updateMapViewAnnotations {
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    [self.mapView addAnnotations:self.locations];
-    [self.mapView showAnnotations:self.locations animated:YES];
-    
-}
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
-    
+    // Zooms in on user location only the first time it receives the user location
     if (!self.isLocationSet){
-
+    // 1
     CLLocationCoordinate2D zoomLocation;
     
     CLLocation *location = userLocation.location;
@@ -73,7 +67,6 @@
     zoomLocation.latitude = coordinate.latitude;
     zoomLocation.longitude= coordinate.longitude;
     
-    
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     
@@ -81,7 +74,6 @@
     [_mapView setRegion:viewRegion animated:YES];
         
     self.isLocationSet = YES;
-        
     }
     
 }
@@ -90,13 +82,16 @@
 // Wait for location callbacks
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-
-   // [self updateAndDisplayCurrentUserLocation];
-    [self sendVendorLocation];
+    NSLog(@"Locations array:  %@", locations);
+    [self sendVendorLocation:locations];
 }
 
 
-
+/**
+ *  We'll be using this portion for the user side of things
+ *  This is where we get the user's current location and
+ *  remove and add the annotations
+ */
 //Unused, but has some good methods and ideas.
 -(void)updateAndDisplayCurrentUserLocation {
     
@@ -119,7 +114,7 @@
 }
 
 
--(void)sendVendorLocation {
+-(void)sendVendorLocation:(NSArray*)locations {
     
     CLLocation *location = [self.mapView userLocation].location;
     
@@ -131,61 +126,43 @@
     
     CLLocationCoordinate2D coordinate = [location coordinate];
  
-    
     PFQuery *query = [PFQuery queryWithClassName:@"VendorLocationHistory"];
+    
+    // *********** Change all AlansTruck strings to a property ***************
     [query whereKey:@"vendorName" equalTo:@"AlansTruck"];
-
+    // *********** Change all AlansTruck strings to a property ***************
+    
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error){
         if (error){
-            NSLog(@"Error upsert: %@", error);
+            NSLog(@"Error getting object: %@", error);
         }
         
-        
         if (!object){
-            NSLog(@"OBJECT WAS NIL! Let's make a new one!");
             PFObject *vendorLocation = [PFObject objectWithClassName:@"VendorLocationHistory"];
             vendorLocation[@"vendorName"] = @"AlansTruck";
             vendorLocation[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
             [vendorLocation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
              {
-                 NSLog(@"The save attempt was: %i", succeeded);
                  if (error){
                      NSLog(@"Error saving: %@", error);
                  } else {
-                    // self.objectID = [vendorLocation objectId];
                     [self updateAndDisplayVendorLocation];
                      NSLog(@"Saved location to Parse successfully!");
                  }
-                 
              }];
-
         } else {
             object[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
             [object saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
             {
-                NSLog(@"The save attempt was: %i", succeeded);
                 if (error){
                     NSLog(@"Error saving: %@", error);
                 } else {
                     [self updateAndDisplayVendorLocation];
-                     NSLog(@"Saved location to Parse successfully!");
+                     NSLog(@"Updated location on Parse successfully!");
                 }
             }];
-           
-
         }
-        
-       
-    
     }];
-    
-    
-    
-    
-   
-
-    
-    
 }
 
 
@@ -193,13 +170,12 @@
     
     CLLocation *location = [self.mapView userLocation].location;
 
-    
     if (!location){
         NSLog(@"Location is nil.  Do not update.");
         return;
     }
     
-    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+//    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
     PFQuery *query = [PFQuery queryWithClassName:@"VendorLocationHistory"];
     
     
@@ -226,10 +202,6 @@
         
         
     }];
-    
-    //    NSArray *resultsArray = [query findObjects];
-    //    NSLog(@"The most recent location is: %@", [resultsArray lastObject]);
-    //
 }
 
 //

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459138C91B39C43E00293E5C /* VendorViewController.m */; };
 		45D87BF21B3866C700FA1435 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEC1B3866C700FA1435 /* Bolts.framework */; };
 		45D87BF31B3866C700FA1435 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BED1B3866C700FA1435 /* Parse.framework */; };
 		45D87BF41B3866C700FA1435 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */; };
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		459138C81B39C43E00293E5C /* VendorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorViewController.h; sourceTree = "<group>"; };
+		459138C91B39C43E00293E5C /* VendorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorViewController.m; sourceTree = "<group>"; };
 		45D87BEC1B3866C700FA1435 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		45D87BED1B3866C700FA1435 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -169,6 +172,8 @@
 				72A855FD1B34C0FF00F4476C /* AppDelegate.m */,
 				72A856021B34C0FF00F4476C /* UserViewController.h */,
 				72A856031B34C0FF00F4476C /* UserViewController.m */,
+				459138C81B39C43E00293E5C /* VendorViewController.h */,
+				459138C91B39C43E00293E5C /* VendorViewController.m */,
 				72A856051B34C0FF00F4476C /* Main.storyboard */,
 				722DDFEC1B35226B00E7E03F /* MyAnnotation.h */,
 				722DDFED1B35226B00E7E03F /* MyAnnotation.m */,
@@ -256,6 +261,11 @@
 				TargetAttributes = {
 					72A855F41B34C0FF00F4476C = {
 						CreatedOnToolsVersion = 6.3.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					72A856101B34C0FF00F4476C = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -309,6 +319,7 @@
 			files = (
 				72A855FE1B34C0FF00F4476C /* AppDelegate.m in Sources */,
 				722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */,
+				459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */,
 				72A855FB1B34C0FF00F4476C /* main.m in Sources */,
 				72A856041B34C0FF00F4476C /* UserViewController.m in Sources */,
 				72A856011B34C0FF00F4476C /* Cones.xcdatamodeld in Sources */,
