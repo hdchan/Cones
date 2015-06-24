@@ -45,7 +45,7 @@
             
             self.currentVendorLocationParseData = vendorData; // Set our instance variable
             
-            [self startUpdatingLocation];
+            [self setupLocationUpdating];
             
             
         } else {
@@ -65,7 +65,7 @@
                 
                 if (succeeded) {
                     
-                    [self startUpdatingLocation];
+                    [self setupLocationUpdating];
                     
                 }
                  
@@ -79,7 +79,7 @@
 
 #pragma mark 
 
-- (void) startUpdatingLocation {
+- (void) setupLocationUpdating {
     
 //    CLAuthorizationStatus authorizationStatus= [CLLocationManager authorizationStatus];
 //    
@@ -95,6 +95,10 @@
         self.locationManager = [CLLocationManager new];
         
         self.locationManager.delegate = self;
+    
+        if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
+            [self.locationManager requestAlwaysAuthorization];
+        }
         
         [self.locationManager startUpdatingLocation];
         
