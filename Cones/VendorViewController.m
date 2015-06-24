@@ -77,10 +77,6 @@
     
 }
 
-- (void) fetchVendorLocationData {
-    
-}
-
 #pragma mark 
 
 - (void) startUpdatingLocation {
@@ -149,9 +145,5 @@
     [self sendVendorLocationToParse:location];
     
 }
-
-
-
-
 
 @end
