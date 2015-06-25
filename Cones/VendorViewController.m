@@ -31,8 +31,10 @@
     
     [super viewDidLoad];
     
+    
+    
+    
     self.currentUser = [PFUser currentUser];
-  
     if(!self.currentUser) {
         [self performSegueWithIdentifier:@"LoginUser" sender:self];
     }
@@ -42,14 +44,6 @@
         [self setupVendorLocationData];
     
     }];
-    
-    // NSLog(@"%@",[PFSession getCurrentSessionInBackground]);
-    
-    /*if ([]){
-     
-    }
-    
-    [self setupVendorLocationData];*/
     
 }
 
