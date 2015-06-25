@@ -16,8 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) BOOL currentVendorLocationSet;
-@property (nonatomic, strong) PFObject *currentVendorLocationParseData;
+@property (nonatomic, strong) PFObject *currentVendorLocationData;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) PFUser *currentUser;
+
 
 @end
 
@@ -29,13 +31,48 @@
     
     [super viewDidLoad];
     
-    NSString *vendorName = @"HenrysTruck";
+    if(![PFUser currentUser]) {
+        [self performSegueWithIdentifier:@"LoginUser" sender:self];
+    }
     
-    NSString *queryClassName = @"VendorLocationHistory";
+    [PFSession getCurrentSessionInBackgroundWithBlock:^(PFSession *session, NSError *error){
+        NSLog(@"%@",session);
+    
+    }];
+    
+    NSLog(@"%@",[PFSession getCurrentSessionInBackground]);
+    
+    /*if ([]){
+     
+    }
+    
+    [self setupVendorLocationData];*/
+    
+}
+
+/*- (void) setCurrentUser:(PFUser *)currentUser {
+    NSLog(@"%@",currentUser);
+    if (!currentUser) {
+        
+        
+        
+        NSLog(@"User info %@",self.currentUser);
+        
+    }
+    
+    _currentUser = currentUser;
+    
+}*/
+
+- (void) setupVendorLocationData {
+    
+    NSString *userId = self.currentUser.objectId;
+    
+    NSString *queryClassName = @"VendorLocation";
     
     PFQuery *query = [PFQuery queryWithClassName:queryClassName];
     
-    [query whereKey:@"vendorName" equalTo:vendorName];
+    [query whereKey:@"userId" equalTo:userId];
     
     
     // Retrieving user data here
@@ -43,7 +80,7 @@
         
         if (vendorData){ // If an entry exists
             
-            self.currentVendorLocationParseData = vendorData; // Set our instance variable
+            self.currentVendorLocationData = vendorData; // Set our instance variable
             
             [self setupLocationUpdating];
             
@@ -57,23 +94,28 @@
             }
             
             // Other wise we'll set up a new object to contain our new user data
-            self.currentVendorLocationParseData = [PFObject objectWithClassName:queryClassName];
+            self.currentVendorLocationData = [PFObject objectWithClassName:queryClassName];
             
-            self.currentVendorLocationParseData[@"vendorName"] = vendorName;
+            self.currentVendorLocationData[@"userId"] = userId;
             
-            [self.currentVendorLocationParseData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.currentVendorLocationData saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 
                 if (succeeded) {
                     
                     [self setupLocationUpdating];
                     
                 }
-                 
+                
             }];
             
         }
-
+        
     }];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
     
 }
 
@@ -111,9 +153,9 @@
     
     NSLog(@"%@: %f, %f", NSStringFromSelector(_cmd), vendorLocation.coordinate.latitude, vendorLocation.coordinate.longitude);
     
-    self.currentVendorLocationParseData[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:vendorLocation.coordinate.latitude longitude:vendorLocation.coordinate.longitude];
+    self.currentVendorLocationData[@"geoPoint"] = [PFGeoPoint geoPointWithLatitude:vendorLocation.coordinate.latitude longitude:vendorLocation.coordinate.longitude];
     
-    [self.currentVendorLocationParseData saveInBackground];
+    [self.currentVendorLocationData saveInBackground];
     
     
 }

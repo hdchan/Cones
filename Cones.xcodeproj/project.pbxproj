@@ -28,6 +28,7 @@
 		45D87C0D1B38677200FA1435 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C0C1B38677200FA1435 /* libsqlite3.dylib */; };
 		722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 722DDFED1B35226B00E7E03F /* MyAnnotation.m */; };
 		7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7272F4EE1B39EEAA00E98635 /* Vendor.m */; };
+		727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727D22741B3B5FDE00F0F15B /* VendorLoginViewController.m */; };
 		72A855FB1B34C0FF00F4476C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A855FA1B34C0FF00F4476C /* main.m */; };
 		72A855FE1B34C0FF00F4476C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A855FD1B34C0FF00F4476C /* AppDelegate.m */; };
 		72A856011B34C0FF00F4476C /* Cones.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72A855FF1B34C0FF00F4476C /* Cones.xcdatamodeld */; };
@@ -73,6 +74,8 @@
 		722DDFED1B35226B00E7E03F /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		7272F4ED1B39EEAA00E98635 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
 		7272F4EE1B39EEAA00E98635 /* Vendor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vendor.m; sourceTree = "<group>"; };
+		727D22731B3B5FDE00F0F15B /* VendorLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorLoginViewController.h; sourceTree = "<group>"; };
+		727D22741B3B5FDE00F0F15B /* VendorLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorLoginViewController.m; sourceTree = "<group>"; };
 		72A855F51B34C0FF00F4476C /* Cones.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cones.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A855F91B34C0FF00F4476C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A855FA1B34C0FF00F4476C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 				72A856031B34C0FF00F4476C /* UserViewController.m */,
 				459138C81B39C43E00293E5C /* VendorViewController.h */,
 				459138C91B39C43E00293E5C /* VendorViewController.m */,
+				727D22731B3B5FDE00F0F15B /* VendorLoginViewController.h */,
+				727D22741B3B5FDE00F0F15B /* VendorLoginViewController.m */,
 				7272F4ED1B39EEAA00E98635 /* Vendor.h */,
 				7272F4EE1B39EEAA00E98635 /* Vendor.m */,
 				72A856051B34C0FF00F4476C /* Main.storyboard */,
@@ -326,6 +331,7 @@
 				722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */,
 				7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */,
 				459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */,
+				727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */,
 				72A855FB1B34C0FF00F4476C /* main.m in Sources */,
 				72A856041B34C0FF00F4476C /* UserViewController.m in Sources */,
 				72A856011B34C0FF00F4476C /* Cones.xcdatamodeld in Sources */,
@@ -464,6 +470,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -479,6 +486,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

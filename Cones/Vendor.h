@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
 
-@interface Vendor : PFObject
+@interface Vendor : NSObject <MKAnnotation>
+
+@property (nonatomic) double longitude;
+@property (nonatomic) double latitude;
+
+- (instancetype) initWithLongitude:(CLLocationDegrees) longitude latitude:(CLLocationDegrees) latitude;
 
 @end
