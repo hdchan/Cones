@@ -39,31 +39,42 @@
     
     NSLog(@"%i", authorizationStatus);
     
-    if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse){
-        self.mapView.showsUserLocation = YES;
-    } else {
-        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        
+        if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse){
+            self.mapView.showsUserLocation = YES;
+            
+        } else {
+            
             [self.locationManager requestWhenInUseAuthorization];
         }
 
+    } else {
+        self.mapView.showsUserLocation = YES;
     }
     
-    
-  
-    
+   
     
     
 }
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
-    NSLog(@"Status changed %i", status);
-    if (status == kCLAuthorizationStatusAuthorizedWhenInUse){
-        NSLog(@"Authorized!");
-        self.mapView.showsUserLocation = YES;
-    } else {
-        // send to setting or something
-        NSLog(@"Not authorized!");
+    
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        
+        NSLog(@"Status changed %i", status);
+        
+        
+        if (status == kCLAuthorizationStatusAuthorizedWhenInUse){
+            NSLog(@"Authorized!");
+            self.mapView.showsUserLocation = YES;
+        } else {
+            // send to setting or something
+            NSLog(@"Not authorized!");
+        }
     }
+    
+    
     
 }
 
