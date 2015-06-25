@@ -25,6 +25,8 @@
 }
 
 - (void) registerUser {
+   
+        
     
     PFUser *user = [PFUser user];
     user.username = self.emailTextField.text;
@@ -42,7 +44,7 @@
         
         }
     }];
-    
+  
 }
 
 - (void) loginUser {

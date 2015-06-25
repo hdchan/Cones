@@ -18,5 +18,6 @@
 @property (nonatomic) double latitude;
 // add an init method so you can set the coordinate property on startup
 
-
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *subTitle;
 @end

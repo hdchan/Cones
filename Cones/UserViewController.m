@@ -12,10 +12,11 @@
 #import <Parse/Parse.h>
 #import "Vendor.h"
 
-@interface UserViewController () <MKMapViewDelegate>
+@interface UserViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic) MKUserLocation *currentUserLocation;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 #define METERS_PER_MILE 1609.344
@@ -29,9 +30,40 @@
 
     self.mapView.delegate = self;
     
-    self.mapView.showsUserLocation = YES;
     
     
+    self.locationManager = [CLLocationManager new];
+    self.locationManager.delegate = self;
+
+    CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
+    
+    NSLog(@"%i", authorizationStatus);
+    
+    if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse){
+        self.mapView.showsUserLocation = YES;
+    } else {
+        if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+            [self.locationManager requestWhenInUseAuthorization];
+        }
+
+    }
+    
+    
+  
+    
+    
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
+    NSLog(@"Status changed %i", status);
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse){
+        NSLog(@"Authorized!");
+        self.mapView.showsUserLocation = YES;
+    } else {
+        // send to setting or something
+        NSLog(@"Not authorized!");
+    }
     
 }
 
@@ -76,6 +108,31 @@
     
     
     
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mV viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]]){
+        
+        return nil;
+    }
+   // NSLog(@"%@", annotation);
+    
+    MKAnnotationView *pinView = nil;
+
+        static NSString *defaultPinID = @"com.invasivecode.pin";
+        pinView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+//    if ( pinView == nil ){
+            pinView = [[MKAnnotationView alloc]
+                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        
+        //pinView.pinColor = MKPinAnnotationColorGreen;
+        pinView.canShowCallout = NO;
+        //pinView.animatesDrop = YES;
+    
+        pinView.image = [UIImage imageNamed:@"smallTruck"];
+   // }
+    return pinView;
 }
 
 - (void) getVendorsAroundUserLocation:(MKUserLocation*)userLocation {

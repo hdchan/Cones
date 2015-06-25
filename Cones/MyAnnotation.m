@@ -20,4 +20,14 @@
     return coordinates;
 }
 
+-(instancetype)init{
+    self = [super init];
+    if (self){
+      _title = @"Ice Cream Truck";
+    }
+    return self;
+}
+
+
+
 @end
