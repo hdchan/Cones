@@ -125,6 +125,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		459139441B3B571100293E5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45D87C0C1B38677200FA1435 /* libsqlite3.dylib */,
+				45D87C0A1B38676900FA1435 /* libz.dylib */,
+				45D87C081B38676200FA1435 /* SystemConfiguration.framework */,
+				45D87C061B38675B00FA1435 /* StoreKit.framework */,
+				45D87C041B38672900FA1435 /* Security.framework */,
+				45D87C021B38671D00FA1435 /* QuartzCore.framework */,
+				45D87C001B38671700FA1435 /* MobileCoreServices.framework */,
+				45D87BFE1B38670E00FA1435 /* CoreLocation.framework */,
+				45D87BFC1B38670900FA1435 /* CoreGraphics.framework */,
+				45D87BFA1B38670300FA1435 /* CFNetwork.framework */,
+				45D87BF81B3866FA00FA1435 /* AudioToolbox.framework */,
+				72A856211B34C1C200F4476C /* MapKit.framework */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		45D87BEB1B3866C700FA1435 /* parse-library-1.7.4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,18 +161,6 @@
 		72A855EC1B34C0FF00F4476C = {
 			isa = PBXGroup;
 			children = (
-				45D87C0C1B38677200FA1435 /* libsqlite3.dylib */,
-				45D87C0A1B38676900FA1435 /* libz.dylib */,
-				45D87C081B38676200FA1435 /* SystemConfiguration.framework */,
-				45D87C061B38675B00FA1435 /* StoreKit.framework */,
-				45D87C041B38672900FA1435 /* Security.framework */,
-				45D87C021B38671D00FA1435 /* QuartzCore.framework */,
-				45D87C001B38671700FA1435 /* MobileCoreServices.framework */,
-				45D87BFE1B38670E00FA1435 /* CoreLocation.framework */,
-				45D87BFC1B38670900FA1435 /* CoreGraphics.framework */,
-				45D87BFA1B38670300FA1435 /* CFNetwork.framework */,
-				45D87BF81B3866FA00FA1435 /* AudioToolbox.framework */,
-				72A856211B34C1C200F4476C /* MapKit.framework */,
 				72A855F71B34C0FF00F4476C /* Cones */,
 				72A856141B34C0FF00F4476C /* ConesTests */,
 				72A855F61B34C0FF00F4476C /* Products */,
@@ -194,6 +202,7 @@
 		72A855F81B34C0FF00F4476C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				459139441B3B571100293E5C /* Frameworks */,
 				72A855F91B34C0FF00F4476C /* Info.plist */,
 				72A855FA1B34C0FF00F4476C /* main.m */,
 			);

@@ -1,5 +1,9 @@
 CONES -- TODO
 -------------
 
-1)  Create 2 classes - vendor/user
-2)  Set vendor's location to emit always
+[x]  Create 2 classes - vendor/user
+[x]  Set vendor's location to emit always
+[ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
+[ ]  Set vendor location on map with annotation
+[ ]  Create user class
+[ ]  Create login
