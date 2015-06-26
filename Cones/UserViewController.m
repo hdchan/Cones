@@ -39,7 +39,7 @@
     
     NSLog(@"%i", authorizationStatus);
     
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // These permissions were added in iOS 8, so we need a check
         
         if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse){
             self.mapView.showsUserLocation = YES;
@@ -49,7 +49,7 @@
             [self.locationManager requestWhenInUseAuthorization];
         }
 
-    } else {
+    } else { // Anything prior to iOS 8 didn't not require a manual permissions check, it did it automatically
         self.mapView.showsUserLocation = YES;
     }
     
