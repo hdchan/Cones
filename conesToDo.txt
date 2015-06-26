@@ -4,6 +4,11 @@ CONES -- TODO
 [x]  Create 2 classes - vendor/user
 [x]  Set vendor's location to emit always
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
-[ ]  Set vendor location on map with annotation
-[ ]  Create user class
+[x]  Set vendor location on map with annotation
+[x]  Create user class
 [ ]  Create login
+[ ]  Make return button work for login screen
+[ ]  Add back button to signup screen
+[x]  Password protect password fields
+[ ]  Determine how to handle removing ice cream trucks
+[ ]  What if 2 people have the same login name?  Need to make sure it is unique.

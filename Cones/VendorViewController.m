@@ -30,27 +30,33 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    
+
     self.currentUser = [PFUser currentUser];
-  
+    
     if(!self.currentUser) {
         [self performSegueWithIdentifier:@"LoginUser" sender:self];
     }
     
-    [PFSession getCurrentSessionInBackgroundWithBlock:^(PFSession *session, NSError *error){
-    //  NSLog(@"This is the session: %@",session);
-        [self setupVendorLocationData];
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"Location set: %i", self.currentVendorLocationSet);
+    self.currentUser = [PFUser currentUser];
+    NSLog(@"This is the current user: %@", self.currentUser);
     
-    }];
-    
-    // NSLog(@"%@",[PFSession getCurrentSessionInBackground]);
-    
-    /*if ([]){
-     
+    if(self.currentUser) {
+        [PFSession getCurrentSessionInBackgroundWithBlock:^(PFSession *session, NSError *error){
+            
+            if (error){
+                NSLog(@"Error on vendor view controller: %@", error);
+            }
+            NSLog(@"This is the session: %@",session);
+            [self setupVendorLocationData];
+            
+        }];
     }
-    
-    [self setupVendorLocationData];*/
-    
+
 }
 
 /*- (void) setCurrentUser:(PFUser *)currentUser {
@@ -116,11 +122,7 @@
     }];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    
-}
+
 
 #pragma mark 
 
