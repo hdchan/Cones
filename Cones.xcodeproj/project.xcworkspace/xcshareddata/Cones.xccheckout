@@ -11,7 +11,7 @@
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>69CA53886ED977BE688ABEF458FA903A6CD2289C</key>
-		<string>github.com:alanscarpa/cones.git</string>
+		<string>github.com:hdchan/cones.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Cones.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>github.com:alanscarpa/cones.git</string>
+	<string>github.com:hdchan/cones.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
