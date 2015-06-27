@@ -38,10 +38,10 @@
             </objects>
             <point key="canvasLocation" x="911" y="-580"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="lfA-al-Dtq">
             <objects>
-                <viewController id="rKc-Ta-XyT" sceneMemberID="viewController">
+                <viewController id="rKc-Ta-XyT" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0NG-WQ-uUh"/>
                         <viewControllerLayoutGuide type="bottom" id="kIh-nl-6L0"/>
@@ -50,12 +50,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CONES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQX-wt-xEV">
-                                <rect key="frame" x="80" y="20" width="160" height="55"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZE-mz-zIk">
                                 <rect key="frame" x="245" y="270" width="111" height="30"/>
                                 <state key="normal" title="Ice Cream Eater">
@@ -74,17 +68,32 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="xEG-WV-Kkw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="welcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-GQ-T3Z">
+                                <rect key="frame" x="0.0" y="64" width="600" height="543"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gsb-A2-yMK" firstAttribute="top" secondItem="DZE-mz-zIk" secondAttribute="bottom" constant="8" id="4Fh-U3-9Nw"/>
+                            <constraint firstItem="bkt-GQ-T3Z" firstAttribute="leading" secondItem="WDX-Ry-MDz" secondAttribute="leadingMargin" id="8m3-C6-pQG"/>
+                            <constraint firstItem="bkt-GQ-T3Z" firstAttribute="top" secondItem="0NG-WQ-uUh" secondAttribute="bottom" id="JVC-5M-KhI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bkt-GQ-T3Z" secondAttribute="trailing" id="Lyb-rd-vWa"/>
                             <constraint firstAttribute="centerY" secondItem="Gsb-A2-yMK" secondAttribute="centerY" constant="-23" id="OHx-Ky-X9T"/>
                             <constraint firstAttribute="centerX" secondItem="DZE-mz-zIk" secondAttribute="centerX" constant="-0.5" id="XhP-na-gnC"/>
                             <constraint firstAttribute="centerY" secondItem="DZE-mz-zIk" secondAttribute="centerY" constant="15" id="cWz-72-FiS"/>
                             <constraint firstAttribute="centerX" secondItem="Gsb-A2-yMK" secondAttribute="centerX" constant="-0.5" id="dn7-rd-wUO"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bkt-GQ-T3Z" secondAttribute="bottom" id="j5h-Pc-XC2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lCd-3s-gW3"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="bkt-GQ-T3Z" id="KMq-US-2dQ"/>
+                        <outlet property="userButton" destination="DZE-mz-zIk" id="6CZ-B0-xCR"/>
+                        <outlet property="vendorButton" destination="Gsb-A2-yMK" id="Jhy-qe-UJ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ip9-XD-q7g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +177,6 @@
         <!--Vendor Sign Up View Controller-->
         <scene sceneID="rsY-VD-xdk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8YP-ph-opW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FR6-Br-Neb" customClass="VendorSignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CKT-5L-P6C"/>
@@ -226,6 +234,7 @@
                         <outlet property="truckNameTextField" destination="B9T-En-GqR" id="GAW-uj-Ao9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8YP-ph-opW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1808" y="956"/>
         </scene>
@@ -283,4 +292,7 @@
             <point key="canvasLocation" x="-450" y="286.26760563380282"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="welcomeBackground" width="1536" height="2208"/>
+    </resources>
 </document>

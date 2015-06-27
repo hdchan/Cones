@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		451AB0EC1B3DC943000B4CB5 /* VendorSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451AB0EB1B3DC943000B4CB5 /* VendorSignUpViewController.m */; };
+		451AB0F21B3E26C6000B4CB5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451AB0F11B3E26C6000B4CB5 /* HomeViewController.m */; };
 		459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459138C91B39C43E00293E5C /* VendorViewController.m */; };
 		459138CC1B39D6D900293E5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459138CB1B39D6D900293E5C /* Images.xcassets */; };
 		45D87BF21B3866C700FA1435 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEC1B3866C700FA1435 /* Bolts.framework */; };
@@ -53,6 +54,8 @@
 /* Begin PBXFileReference section */
 		451AB0EA1B3DC943000B4CB5 /* VendorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorSignUpViewController.h; sourceTree = "<group>"; };
 		451AB0EB1B3DC943000B4CB5 /* VendorSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorSignUpViewController.m; sourceTree = "<group>"; };
+		451AB0F01B3E26C6000B4CB5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
+		451AB0F11B3E26C6000B4CB5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		459138C81B39C43E00293E5C /* VendorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorViewController.h; sourceTree = "<group>"; };
 		459138C91B39C43E00293E5C /* VendorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorViewController.m; sourceTree = "<group>"; };
 		459138CB1B39D6D900293E5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				459138CB1B39D6D900293E5C /* Images.xcassets */,
+				451AB0F01B3E26C6000B4CB5 /* HomeViewController.h */,
+				451AB0F11B3E26C6000B4CB5 /* HomeViewController.m */,
 				72A855FC1B34C0FF00F4476C /* AppDelegate.h */,
 				72A855FD1B34C0FF00F4476C /* AppDelegate.m */,
 				72A856021B34C0FF00F4476C /* UserViewController.h */,
@@ -199,9 +204,9 @@
 				7272F4ED1B39EEAA00E98635 /* Vendor.h */,
 				7272F4EE1B39EEAA00E98635 /* Vendor.m */,
 				72A856051B34C0FF00F4476C /* Main.storyboard */,
+				72A8560A1B34C0FF00F4476C /* LaunchScreen.xib */,
 				722DDFEC1B35226B00E7E03F /* MyAnnotation.h */,
 				722DDFED1B35226B00E7E03F /* MyAnnotation.m */,
-				72A8560A1B34C0FF00F4476C /* LaunchScreen.xib */,
 				72A855FF1B34C0FF00F4476C /* Cones.xcdatamodeld */,
 				45D87BEB1B3866C700FA1435 /* parse-library-1.7.4 */,
 				72A855F81B34C0FF00F4476C /* Supporting Files */,
@@ -344,6 +349,7 @@
 				72A855FE1B34C0FF00F4476C /* AppDelegate.m in Sources */,
 				722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */,
 				7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */,
+				451AB0F21B3E26C6000B4CB5 /* HomeViewController.m in Sources */,
 				459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */,
 				727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */,
 				72A855FB1B34C0FF00F4476C /* main.m in Sources */,
