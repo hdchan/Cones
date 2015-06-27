@@ -3,12 +3,20 @@ CONES -- TODO
 
 [x]  Create 2 classes - vendor/user
 [x]  Set vendor's location to emit always
-[ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
 [x]  Set vendor location on map with annotation
 [x]  Create user class
-[ ]  Create login
-[ ]  Make return button work for login screen
-[ ]  Add back button to signup screen
+[x]  Create login for vendor
+[x]  Make return button work for login screen
+[x]  Add back button to signup screen
 [x]  Password protect password fields
 [ ]  Determine how to handle removing ice cream trucks
 [ ]  What if 2 people have the same login name?  Need to make sure it is unique.
+[ ]  Increase initial map view size
+[ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
+[ ]  Notify user of failed logins or signups via modal presentation
+[ ]  Add text field validation for login and signup
+[ ]  Figure out way to handle if vendor decides to be regular user in same session
+[ ]  Allow vendor to log out
+[ ]  Import Cones Logo font and use everywhere
+[ ]  App only shows truck within the radius.  If you zoom out, then zoom to another area, no trucks appear.
+[ ]  Create cancel button for sign up page

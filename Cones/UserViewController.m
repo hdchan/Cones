@@ -28,6 +28,8 @@
     
     [super viewDidLoad];
 
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     self.mapView.delegate = self;
     
     

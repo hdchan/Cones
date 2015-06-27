@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextFIeld;
-
+@property (nonatomic, strong) UINavigationController *navController;
 
 @end
 
@@ -21,7 +21,9 @@
 -(void)viewDidLoad {
     
     [super viewDidLoad];
-    
+    self.emailTextField.delegate = self;
+    self.passwordTextFIeld.delegate = self;
+   
 }
 
 - (void) registerUser {
@@ -76,18 +78,26 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if ([textField.accessibilityLabel isEqualToString:@"password"]) {
-        
-        [textField resignFirstResponder];
-        
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
     } else {
-        
-        [self.passwordTextFIeld becomeFirstResponder];
-        
+        // Not found, so remove keyboard.
+        [textField resignFirstResponder];
+         [self loginUser];
     }
+    return NO; // We do not want UITextField to insert line-breaks.
     
-    return YES;
-    
+}
+
+- (IBAction)cancelButtonTouched:(id)sender {
+    self.navController = (UINavigationController*)self.presentingViewController;
+    [self.navController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
