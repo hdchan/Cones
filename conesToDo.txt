@@ -16,4 +16,7 @@ CONES -- TODO
 [ ]  Notify user of failed logins or signups via modal presentation
 [ ]  Add text field validation for login and signup
 [ ]  Figure out way to handle if vendor decides to be regular user in same session
+[ ]  Allow vendor to log out
 [ ]  Import Cones Logo font and use everywhere
+[ ]  App only shows truck within the radius.  If you zoom out, then zoom to another area, no trucks appear.
+[ ]  Create cancel button for sign up page
