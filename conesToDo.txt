@@ -6,10 +6,14 @@ CONES -- TODO
 [x]  Set vendor location on map with annotation
 [x]  Create user class
 [x]  Create login for vendor
-[ ]  Make return button work for login screen
+[x]  Make return button work for login screen
 [x]  Add back button to signup screen
 [x]  Password protect password fields
 [ ]  Determine how to handle removing ice cream trucks
 [ ]  What if 2 people have the same login name?  Need to make sure it is unique.
 [ ]  Increase initial map view size
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
+[ ]  Notify user of failed logins or signups via modal presentation
+[ ]  Add text field validation for login and signup
+[ ]  Figure out way to handle if vendor decides to be regular user in same session
+[ ]  Import Cones Logo font and use everywhere

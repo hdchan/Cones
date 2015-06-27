@@ -50,42 +50,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZE-mz-zIk">
-                                <rect key="frame" x="245" y="270" width="111" height="30"/>
-                                <state key="normal" title="Ice Cream Eater">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-GQ-T3Z">
+                                <rect key="frame" x="16" y="64" width="568" height="536"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DZE-mz-zIk">
+                                <rect key="frame" x="219" y="341" width="162" height="51"/>
+                                <color key="backgroundColor" red="0.88627450980392153" green="0.29411764705882354" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find Ice Cream!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="cjS-fY-zPF" kind="show" id="qBz-ku-AoL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-A2-yMK">
-                                <rect key="frame" x="276" y="308" width="49" height="30"/>
-                                <state key="normal" title="Vendor">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-A2-yMK">
+                                <rect key="frame" x="235" y="529" width="130" height="31"/>
+                                <color key="backgroundColor" red="0.96128240121806297" green="0.53339079395504307" blue="0.35675504283137233" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Vendor Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="xEG-WV-Kkw"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="welcomeBackground" translatesAutoresizingMaskIntoConstraints="NO" id="bkt-GQ-T3Z">
-                                <rect key="frame" x="0.0" y="64" width="600" height="543"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
-                                </accessibility>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gsb-A2-yMK" firstAttribute="top" secondItem="DZE-mz-zIk" secondAttribute="bottom" constant="8" id="4Fh-U3-9Nw"/>
-                            <constraint firstItem="bkt-GQ-T3Z" firstAttribute="leading" secondItem="WDX-Ry-MDz" secondAttribute="leadingMargin" id="8m3-C6-pQG"/>
-                            <constraint firstItem="bkt-GQ-T3Z" firstAttribute="top" secondItem="0NG-WQ-uUh" secondAttribute="bottom" id="JVC-5M-KhI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bkt-GQ-T3Z" secondAttribute="trailing" id="Lyb-rd-vWa"/>
-                            <constraint firstAttribute="centerY" secondItem="Gsb-A2-yMK" secondAttribute="centerY" constant="-23" id="OHx-Ky-X9T"/>
-                            <constraint firstAttribute="centerX" secondItem="DZE-mz-zIk" secondAttribute="centerX" constant="-0.5" id="XhP-na-gnC"/>
-                            <constraint firstAttribute="centerY" secondItem="DZE-mz-zIk" secondAttribute="centerY" constant="15" id="cWz-72-FiS"/>
-                            <constraint firstAttribute="centerX" secondItem="Gsb-A2-yMK" secondAttribute="centerX" constant="-0.5" id="dn7-rd-wUO"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="bkt-GQ-T3Z" secondAttribute="bottom" id="j5h-Pc-XC2"/>
+                            <constraint firstAttribute="centerX" secondItem="DZE-mz-zIk" secondAttribute="centerX" id="1LF-FF-7qh"/>
+                            <constraint firstAttribute="centerX" secondItem="Gsb-A2-yMK" secondAttribute="centerX" id="D6t-dC-N4c"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bkt-GQ-T3Z" secondAttribute="bottom" id="EqB-Sr-ljD"/>
+                            <constraint firstItem="bkt-GQ-T3Z" firstAttribute="top" secondItem="0NG-WQ-uUh" secondAttribute="bottom" id="RP8-Hn-kfz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bkt-GQ-T3Z" secondAttribute="trailing" id="ljC-fS-p19"/>
+                            <constraint firstItem="bkt-GQ-T3Z" firstAttribute="leading" secondItem="WDX-Ry-MDz" secondAttribute="leadingMargin" id="md5-iT-fHv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lCd-3s-gW3"/>
