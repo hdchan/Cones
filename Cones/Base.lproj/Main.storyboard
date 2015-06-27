@@ -153,6 +153,15 @@
                                     <segue destination="FR6-Br-Neb" kind="show" id="bMJ-vB-bS3"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="533-E7-Tsp">
+                                <rect key="frame" x="510" y="42" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonTouched:" destination="Zvf-MT-vFb" eventType="touchUpInside" id="uCx-rT-nlm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -160,6 +169,8 @@
                             <constraint firstAttribute="centerX" secondItem="v0N-Eh-ymk" secondAttribute="centerX" id="Ajf-pc-xh6"/>
                             <constraint firstAttribute="centerX" secondItem="nwY-T1-qGa" secondAttribute="centerX" id="GIf-Gd-5gF"/>
                             <constraint firstAttribute="centerX" secondItem="mfF-x2-Onq" secondAttribute="centerX" constant="-0.5" id="Rst-cH-cIL"/>
+                            <constraint firstItem="533-E7-Tsp" firstAttribute="top" secondItem="BSr-uS-7H7" secondAttribute="bottom" constant="22" id="UQg-i7-ZqR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="533-E7-Tsp" secondAttribute="trailing" constant="26" id="cbq-t9-0te"/>
                             <constraint firstAttribute="centerX" secondItem="ID4-lv-ZON" secondAttribute="centerX" id="f1E-Vd-ClC"/>
                             <constraint firstAttribute="centerX" secondItem="Jew-DD-OIM" secondAttribute="centerX" id="iPC-Xq-KAV"/>
                         </constraints>

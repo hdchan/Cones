@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextFIeld;
-
+@property (nonatomic, strong) UINavigationController *navController;
 
 @end
 
@@ -21,7 +21,7 @@
 -(void)viewDidLoad {
     
     [super viewDidLoad];
-    
+   
 }
 
 - (void) registerUser {
@@ -88,6 +88,13 @@
     
     return YES;
     
+}
+- (IBAction)cancelButtonTouched:(id)sender {
+    NSLog(@"%@", self.presentingViewController);
+    self.navController = (UINavigationController*)self.presentingViewController;
+    NSLog(@"%@", self.navController);
+    [self.navController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
