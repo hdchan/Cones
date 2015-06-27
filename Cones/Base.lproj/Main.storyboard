@@ -168,7 +168,6 @@
         <!--Vendor Sign Up View Controller-->
         <scene sceneID="rsY-VD-xdk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8YP-ph-opW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="FR6-Br-Neb" customClass="VendorSignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CKT-5L-P6C"/>
@@ -226,6 +225,7 @@
                         <outlet property="truckNameTextField" destination="B9T-En-GqR" id="GAW-uj-Ao9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8YP-ph-opW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1808" y="956"/>
         </scene>
