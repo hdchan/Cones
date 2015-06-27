@@ -53,6 +53,8 @@
                                                         if (user) {
                                                             // Do stuff after successful login.
                                                             NSLog(@"Logged in successfully!");
+                                                            [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                                                            
                                                             [self dismissViewControllerAnimated:YES completion:nil];
                                                             
                                                         } else {
@@ -74,8 +76,7 @@
     }];
 
     
-    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-   // [self dismissViewControllerAnimated:YES completion:nil];
+    
     
 }
 
@@ -91,6 +92,7 @@
     } else {
         // Not found, so remove keyboard.
         [textField resignFirstResponder];
+        [self signUpButtonClicked:nil];
     }
     return NO; // We do not want UITextField to insert line-breaks.
     

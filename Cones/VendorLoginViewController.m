@@ -21,6 +21,8 @@
 -(void)viewDidLoad {
     
     [super viewDidLoad];
+    self.emailTextField.delegate = self;
+    self.passwordTextFIeld.delegate = self;
    
 }
 
@@ -76,23 +78,24 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if ([textField.accessibilityLabel isEqualToString:@"password"]) {
-        
-        [textField resignFirstResponder];
-        
-    } else {
-        
-        [self.passwordTextFIeld becomeFirstResponder];
-        
-    }
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
     
-    return YES;
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+        [textField resignFirstResponder];
+         [self loginUser];
+    }
+    return NO; // We do not want UITextField to insert line-breaks.
     
 }
+
 - (IBAction)cancelButtonTouched:(id)sender {
-    NSLog(@"%@", self.presentingViewController);
     self.navController = (UINavigationController*)self.presentingViewController;
-    NSLog(@"%@", self.navController);
     [self.navController popViewControllerAnimated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
