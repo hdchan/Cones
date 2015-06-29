@@ -61,19 +61,6 @@
 
 }
 
-/*- (void) setCurrentUser:(PFUser *)currentUser {
-    NSLog(@"%@",currentUser);
-    if (!currentUser) {
-        
-        
-        
-        NSLog(@"User info %@",self.currentUser);
-        
-    }
-    
-    _currentUser = currentUser;
-    
-}*/
 
 - (void) setupVendorLocationData {
     
@@ -196,6 +183,14 @@
     CLLocation *location = [locations lastObject];
     
     [self sendVendorLocationToParse:location];
+    
+}
+
+
+- (IBAction)logoutButtonPressed:(id)sender {
+    
+    [PFUser logOut];
+    [self.navigationController popViewControllerAnimated:YES];
     
 }
 

@@ -77,6 +77,7 @@
 
     
     
+
     
 }
 
@@ -95,7 +96,13 @@
         [self signUpButtonClicked:nil];
     }
     return NO; // We do not want UITextField to insert line-breaks.
+
+}
+
+
+- (IBAction)cancelButtonPressed:(id)sender {
     
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
