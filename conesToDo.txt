@@ -13,13 +13,17 @@ CONES -- TODO
 [x]  Allow vendor to log out
 [x]  What if 2 people have the same login name -- PARSE HANDLES THIS
 [x]  Create cancel button for sign up page
-[ ]  ERROR HANDLING - Notify user of failed logins or signups via modal presentation
-[ ]  Determine how to handle removing ice cream trucks
-[ ]  Increase initial map view size
-[ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
-[ ]  Add text field validation for login and signup
+[x]  Ask henry to login as vendor, then go to user
+[x]  Figure out the black bars issue on henry's phone.
+
+[ ]  ERROR HANDLING - Notify user of failed logins or signups via UIAlertView
 [ ]  Import Cones Logo font and use everywhere
+[ ]  Add loading icons for logins/etc.
+[ ]  Update UI for login pages
+
+[ ]  Add text field validation for login and signup
+[ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
+[ ]  Send location update only after X amount of feet.
+[ ]  Determine how to handle removing ice cream trucks
 [ ]  App only shows truck within the radius.  If you zoom out, then zoom to another area, no trucks appear.
 [ ]  Instruct user & vendor to go to settings if they decline gps use.
-[ ]  Ask henry to login as vendor, then go to user
-[ ]  Add loading icons for logins/etc.

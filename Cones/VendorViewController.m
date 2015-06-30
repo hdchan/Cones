@@ -132,6 +132,8 @@
         
         self.locationManager.delegate = self;
     
+        self.locationManager.pausesLocationUpdatesAutomatically = NO;
+    
         if ([self.locationManager respondsToSelector:@selector(requestAlwaysAuthorization)]) {
             [self.locationManager requestAlwaysAuthorization];
         }
