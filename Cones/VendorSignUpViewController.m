@@ -39,40 +39,76 @@
     user.email = self.emailTextField.text;
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {   // Hooray! Let them use the app now.
+        
+            
+        if (succeeded) {
+            
+            [PFUser logInWithUsernameInBackground:self.emailTextField.text
+                                         password:self.passwordTextField.text
+                                            block:^(PFUser *user, NSError *error) {
+                                                if (user) {
+                                                    // Do stuff after successful login.
+                                                    NSLog(@"Logged in successfully!");
+                                                    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+                                                    
+                                                    [self dismissViewControllerAnimated:YES completion:nil];
+                                                    
+                                                } else {
+                                                    
+                                                    NSLog(@"Error logging in after signup: %@", error);
+                                                    
+                                                    
+                                                    
+                                                }
+                                                
+                                            }];
             
             PFObject *vendorInformation = [PFObject objectWithClassName:@"VendorInformation"];
             vendorInformation[@"truckName"] = self.truckNameTextField.text;
             vendorInformation[@"userId"] = user.objectId;
             [vendorInformation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 
-                if (succeeded) {
-                    [PFUser logInWithUsernameInBackground:self.emailTextField.text
-                                                 password:self.passwordTextField.text
-                                                    block:^(PFUser *user, NSError *error) {
-                                                        if (user) {
-                                                            // Do stuff after successful login.
-                                                            NSLog(@"Logged in successfully!");
-                                                            [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-                                                            
-                                                            [self dismissViewControllerAnimated:YES completion:nil];
-                                                            
-                                                        } else {
-                                                            
-                                                            NSLog(@"Error logging in after signup: %@", error);
-                                                            
-                                                        }
-                                                    }];
-                } else {
-                    NSLog(@"Error saving vendor information:  %@", error);
-                }
+                NSLog(@"Error saving vendor information:  %@", error);
             }];
-            
+
             
         } else {
-            NSLog(@"Error when signing up:  %@", error);
+            
+            NSLog(@"Error signing up: %@", error);
+            NSLog(@"%ld",(long)error.code); // maybe we can detect the code to be specific about the error
+            
+            if ([UIAlertController class]) { // iOS 8 and up
+                
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Failed attempt"
+                                                                               message:@"The email or password you entered are not valid."
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                
+                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Try again" style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction * action) {}];
+                
+                [alert addAction:defaultAction];
+                [self presentViewController:alert animated:YES completion:nil];
+                
+            } else { // deprecated for iOS 8
+                
+                UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Failed attempt"
+                                                                 message:@"The email or password you entered are not valid."
+                                                                delegate:self
+                                                       cancelButtonTitle:@"Try again"
+                                                       otherButtonTitles: nil];
+                
+                [alert show];
+                
+            }
+
             
         }
+        
+        
+        
+        
+            
+        
     }];
 
     
