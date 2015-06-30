@@ -41,6 +41,9 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {   // Hooray! Let them use the app now.
             
+        
+            
+            
             PFObject *vendorInformation = [PFObject objectWithClassName:@"VendorInformation"];
             vendorInformation[@"truckName"] = self.truckNameTextField.text;
             vendorInformation[@"userId"] = user.objectId;

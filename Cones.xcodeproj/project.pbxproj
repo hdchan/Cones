@@ -11,6 +11,7 @@
 		451AB0F21B3E26C6000B4CB5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 451AB0F11B3E26C6000B4CB5 /* HomeViewController.m */; };
 		459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 459138C91B39C43E00293E5C /* VendorViewController.m */; };
 		459138CC1B39D6D900293E5C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459138CB1B39D6D900293E5C /* Images.xcassets */; };
+		45A1D14D1B4319CB00DBF03F /* SofiaProLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45A1D14C1B4319CB00DBF03F /* SofiaProLight.otf */; };
 		45D87BF21B3866C700FA1435 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEC1B3866C700FA1435 /* Bolts.framework */; };
 		45D87BF31B3866C700FA1435 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BED1B3866C700FA1435 /* Parse.framework */; };
 		45D87BF41B3866C700FA1435 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */; };
@@ -59,6 +60,7 @@
 		459138C81B39C43E00293E5C /* VendorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorViewController.h; sourceTree = "<group>"; };
 		459138C91B39C43E00293E5C /* VendorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorViewController.m; sourceTree = "<group>"; };
 		459138CB1B39D6D900293E5C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		45A1D14C1B4319CB00DBF03F /* SofiaProLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SofiaProLight.otf; sourceTree = "<group>"; };
 		45D87BEC1B3866C700FA1435 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		45D87BED1B3866C700FA1435 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				459138CB1B39D6D900293E5C /* Images.xcassets */,
+				45A1D14C1B4319CB00DBF03F /* SofiaProLight.otf */,
 				451AB0F01B3E26C6000B4CB5 /* HomeViewController.h */,
 				451AB0F11B3E26C6000B4CB5 /* HomeViewController.m */,
 				72A855FC1B34C0FF00F4476C /* AppDelegate.h */,
@@ -329,6 +332,7 @@
 				459138CC1B39D6D900293E5C /* Images.xcassets in Resources */,
 				72A856071B34C0FF00F4476C /* Main.storyboard in Resources */,
 				72A8560C1B34C0FF00F4476C /* LaunchScreen.xib in Resources */,
+				45A1D14D1B4319CB00DBF03F /* SofiaProLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

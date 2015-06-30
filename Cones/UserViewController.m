@@ -29,7 +29,7 @@
     [super viewDidLoad];
 
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:255.0/255 green:227.0/255 blue:193.0/255 alpha:1]];
     self.mapView.delegate = self;
     
     // if pfuser exists, then it means the vendor is logged in
@@ -127,7 +127,6 @@
     CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:newMapCenterCoordinate.latitude longitude:newMapCenterCoordinate.longitude];
     
     [query whereKey:@"geoPoint" nearGeoPoint:[PFGeoPoint geoPointWithLocation:newLocation] withinMiles:5.0];
-    
     
     // Retrieving user data here
     [query findObjectsInBackgroundWithBlock:^(NSArray *vendors, NSError *error){
