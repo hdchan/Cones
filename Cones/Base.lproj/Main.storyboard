@@ -136,13 +136,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="New to Cones?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ID4-lv-ZON">
                                 <rect key="frame" x="227" y="289" width="146" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwY-T1-qGa">
                                 <rect key="frame" x="279" y="42" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jew-DD-OIM">
@@ -151,7 +151,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FR6-Br-Neb" kind="show" id="bMJ-vB-bS3"/>
+                                    <segue destination="FR6-Br-Neb" kind="presentation" id="bMJ-vB-bS3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="533-E7-Tsp">
@@ -225,6 +225,15 @@
                                     <action selector="signUpButtonClicked:" destination="FR6-Br-Neb" eventType="touchUpInside" id="AhW-rB-5mh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EZ-zr-Cb3">
+                                <rect key="frame" x="538" y="28" width="48" height="30"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelButtonPressed:" destination="FR6-Br-Neb" eventType="touchUpInside" id="5hp-A9-Per"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -235,7 +244,9 @@
                             <constraint firstItem="Cuw-dm-3mQ" firstAttribute="top" secondItem="B9T-En-GqR" secondAttribute="bottom" constant="30" id="YXF-Df-Bri"/>
                             <constraint firstAttribute="centerX" secondItem="B9T-En-GqR" secondAttribute="centerX" id="Z66-bN-9CA"/>
                             <constraint firstAttribute="centerX" secondItem="ekr-qg-ED2" secondAttribute="centerX" id="ZS6-he-cC5"/>
+                            <constraint firstItem="8EZ-zr-Cb3" firstAttribute="top" secondItem="CKT-5L-P6C" secondAttribute="bottom" constant="8" id="c6F-Me-AhU"/>
                             <constraint firstItem="ekr-qg-ED2" firstAttribute="top" secondItem="Cuw-dm-3mQ" secondAttribute="bottom" constant="29" id="fuv-MN-YYV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8EZ-zr-Cb3" secondAttribute="trailing" constant="-2" id="qI4-Ob-V39"/>
                             <constraint firstItem="Cuw-dm-3mQ" firstAttribute="leading" secondItem="ekr-qg-ED2" secondAttribute="leading" id="uFO-c8-01M"/>
                             <constraint firstAttribute="centerX" secondItem="Cuw-dm-3mQ" secondAttribute="centerX" id="xD1-cF-8aY"/>
                         </constraints>
@@ -274,7 +285,13 @@
                             <constraint firstItem="PgJ-fE-Abe" firstAttribute="bottom" secondItem="pPE-Zz-a7I" secondAttribute="top" id="rjb-5i-xqM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MHG-2B-Ray"/>
+                    <navigationItem key="navigationItem" id="MHG-2B-Ray">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="8Dg-6a-rDQ">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="BYZ-38-t0r" id="qyt-GG-9SL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="mapView" destination="PgJ-fE-Abe" id="Pdu-vq-Hsc"/>

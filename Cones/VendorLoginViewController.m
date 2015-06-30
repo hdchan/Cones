@@ -26,28 +26,28 @@
    
 }
 
-- (void) registerUser {
-   
-        
-    
-    PFUser *user = [PFUser user];
-    user.username = self.emailTextField.text;
-    user.password = self.passwordTextFIeld.text;
-    user.email = self.emailTextField.text;
-    
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {   // Hooray! Let them use the app now.
-            
-            [self dismissViewControllerAnimated:YES completion:nil];
-            
-        } else {
-            
-            //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
-        
-        }
-    }];
-  
-}
+//- (void) registerUser {
+//   
+//        
+//    
+//    PFUser *user = [PFUser user];
+//    user.username = self.emailTextField.text;
+//    user.password = self.passwordTextFIeld.text;
+//    user.email = self.emailTextField.text;
+//    
+//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (!error) {   // Hooray! Let them use the app now.
+//            
+//            [self dismissViewControllerAnimated:YES completion:nil];
+//            
+//        } else {
+//            
+//            //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
+//        
+//        }
+//    }];
+//  
+//}
 
 - (void) loginUser {
     
@@ -61,7 +61,7 @@
                                             
                                         } else {
                                             
-                                            [self registerUser];
+                                            NSLog(@"Error loggin in: %@", error);
                                             
                                         }
                                     }];

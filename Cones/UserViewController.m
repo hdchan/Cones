@@ -32,7 +32,8 @@
 
     self.mapView.delegate = self;
     
-    
+    // if pfuser exists, then it means the vendor is logged in
+    // so either log him out automatically, or prompt to logout
     
     self.locationManager = [CLLocationManager new];
     self.locationManager.delegate = self;
@@ -43,7 +44,7 @@
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // These permissions were added in iOS 8, so we need a check
         
-        if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse){
+        if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse || authorizationStatus == kCLAuthorizationStatusAuthorizedAlways){
             self.mapView.showsUserLocation = YES;
             
         } else {
@@ -55,9 +56,17 @@
         self.mapView.showsUserLocation = YES;
     }
     
-   
-    
-    
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    //we could do an anonymous login. not sure if we want too.
+//    [PFAnonymousUtils logInWithBlock:^(PFUser *user, NSError *error) {
+//        if (error) {
+//            NSLog(@"Anonymous login failed.");
+//        } else {
+//            NSLog(@"Anonymous user logged in.");
+//        }
+//    }];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
@@ -89,9 +98,6 @@
         MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(userLocation.location.coordinate, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
         
         [_mapView setRegion:viewRegion animated:YES];
-        
-        NSLog(@"Zooming into user's location");
-        
     
     }
     
@@ -99,6 +105,36 @@
     
     [self getVendorsAroundUserLocation:userLocation];
     
+    
+    
+}
+
+// if user scrolls to a new area, we need to show the ice cream trucks in that area.
+-(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView{
+    
+    [self getVendorsAroundNewMapLocation:mapView.centerCoordinate];
+
+    NSLog(@"I went to a new spot!");
+    
+}
+
+- (void) getVendorsAroundNewMapLocation:(CLLocationCoordinate2D)newMapCenterCoordinate {
+    
+    NSString *queryClassName = @"VendorLocation";
+    
+    PFQuery *query = [PFQuery queryWithClassName:queryClassName];
+    
+    CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:newMapCenterCoordinate.latitude longitude:newMapCenterCoordinate.longitude];
+    
+    [query whereKey:@"geoPoint" nearGeoPoint:[PFGeoPoint geoPointWithLocation:newLocation] withinMiles:5.0];
+    
+    
+    // Retrieving user data here
+    [query findObjectsInBackgroundWithBlock:^(NSArray *vendors, NSError *error){
+        
+        [self updateMapWithVendors:vendors];
+        
+    }];
     
     
 }
