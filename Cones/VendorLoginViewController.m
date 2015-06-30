@@ -57,11 +57,38 @@
                                         if (user) {
                                             // Do stuff after successful login.
                                             
+                                            [self.view endEditing:YES];
+                                            
                                             [self dismissViewControllerAnimated:YES completion:nil];
                                             
                                         } else {
                                             
                                             NSLog(@"Error loggin in: %@", error);
+                                            
+                                            if ([UIAlertController class]) { // iOS 8 and up
+                                                
+                                                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Failed attempt"
+                                                                                                               message:@"The email and password you entered don't match."
+                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                
+                                                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Try again" style:UIAlertActionStyleDefault
+                                                                                                      handler:^(UIAlertAction * action) {}];
+                                                
+                                                [alert addAction:defaultAction];
+                                                [self presentViewController:alert animated:YES completion:nil];
+                                                
+                                            } else { // deprecated for iOS 8
+                                                
+                                                UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Failed attempt"
+                                                                                                 message:@"The email and password you entered don't match."
+                                                                                                delegate:self
+                                                                                       cancelButtonTitle:@"Try again"
+                                                                                       otherButtonTitles: nil];
+                                                
+                                                [alert show];
+                                                
+                                            }
+                          
                                             
                                         }
                                     }];
@@ -73,7 +100,7 @@
 - (IBAction)loginTapped:(id)sender {
     
     [self loginUser];
-    
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
