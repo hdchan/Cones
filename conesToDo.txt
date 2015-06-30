@@ -31,3 +31,4 @@ CONES -- TODO
 [ ]  Have a vendor settings page w/ store hours to transmit?
 [ ]  Set up retrieve vendor location w/ certain time frames 
 [ ]  Set PFObject parents instead of using a separate column
+[ ]  Logout button should not be shown if user is logged in
