@@ -33,3 +33,4 @@ CONES -- TODO
 [ ]  Set PFObject parents instead of using a separate column
 [ ]  Logout button should not be shown if user is logged in
 [ ]  Need password validation (front end check). Parse currently accepts blank fields
+[ ]  Should implement email verifications?
