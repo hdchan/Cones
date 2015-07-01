@@ -15,16 +15,17 @@ CONES -- TODO
 [x]  Create cancel button for sign up page
 [x]  Ask henry to login as vendor, then go to user
 [x]  Figure out the black bars issue on henry's phone.
-
-PRESENTATION LIST
+[x]  Hide status bar
+[x]  Change navbar text colors
 [x]  ERROR HANDLING - Notify user of failed logins or signups via UIAlertView
 [x]  Import Cones Logo font and use everywhere
 [x]  Add loading icons for logins/etc.
 [x]  Update UI for login pages
 [x]  Touch screen and hide keyboard on all views
+
+
+PRESENTATION LIST
 [ ]  Add fake ice cream truck locations for presentation
-[x]  Hide status bar
-[x]  Change navbar text colors?
 [ ]  Revisit the zoom to new locations functionality - "i went to a new spot"
 
 
@@ -33,7 +34,7 @@ EXTRAS
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
 [ ]  Send location update only after X amount of feet.
 [ ]  Determine how to handle removing ice cream trucks
-[ ]  App only shows truck within the radius.  If you zoom out, then zoom to another area, no trucks appear.
+[ ]  Only shows truck within radius.  If you zoom out, then zoom to another area, no trucks appear.
 [ ]  Instruct user & vendor to go to settings if they decline gps use.
 [ ]  Add push notifications
 [ ]  Vendor editable

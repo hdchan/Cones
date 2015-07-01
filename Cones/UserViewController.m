@@ -38,7 +38,7 @@
 
     CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
     
-    NSLog(@"%i", authorizationStatus);
+  //  NSLog(@"%i", authorizationStatus);
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // These permissions were added in iOS 8, so we need a check
         
@@ -89,34 +89,25 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
     
-        [self setupNavbar];
-  
-
-    //we could do an anonymous login. not sure if we want too.
-//    [PFAnonymousUtils logInWithBlock:^(PFUser *user, NSError *error) {
-//        if (error) {
-//            NSLog(@"Anonymous login failed.");
-//        } else {
-//            NSLog(@"Anonymous user logged in.");
-//        }
-//    }];
+    [super viewWillAppear:animated];
+    [self setupNavbar];
+    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         
-        NSLog(@"Status changed %i", status);
+    //    NSLog(@"Status changed %i", status);
         
         
         if (status == kCLAuthorizationStatusAuthorizedWhenInUse){
-            NSLog(@"Authorized!");
+         //   NSLog(@"Authorized!");
             self.mapView.showsUserLocation = YES;
         } else {
             // send to setting or something
-            NSLog(@"Not authorized!");
+         //   NSLog(@"Not authorized!");
         }
     }
     
@@ -145,13 +136,13 @@
 }
 
 // if user scrolls to a new area, we need to show the ice cream trucks in that area.
--(void)mapViewDidFinishLoadingMap:(MKMapView *)mapView{
-    
-    [self getVendorsAroundNewMapLocation:mapView.centerCoordinate];
-
-    NSLog(@"I went to a new spot!");
-    
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    if (self.currentUserLocation){
+        [self getVendorsAroundNewMapLocation:mapView.centerCoordinate];
+    }
 }
+
+
 
 - (void) getVendorsAroundNewMapLocation:(CLLocationCoordinate2D)newMapCenterCoordinate {
     
