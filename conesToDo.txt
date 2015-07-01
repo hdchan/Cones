@@ -16,6 +16,7 @@ CONES -- TODO
 [x]  Ask henry to login as vendor, then go to user
 [x]  Figure out the black bars issue on henry's phone.
 
+PRESENTATION LIST
 [x]  ERROR HANDLING - Notify user of failed logins or signups via UIAlertView
 [x]  Import Cones Logo font and use everywhere
 [x]  Add loading icons for logins/etc.
@@ -26,6 +27,8 @@ CONES -- TODO
 [x]  Change navbar text colors?
 [ ]  Revisit the zoom to new locations functionality - "i went to a new spot"
 
+
+EXTRAS
 [ ]  Add text field validation for login and signup
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
 [ ]  Send location update only after X amount of feet.
