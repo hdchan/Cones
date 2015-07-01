@@ -16,9 +16,9 @@ CONES -- TODO
 [x]  Ask henry to login as vendor, then go to user
 [x]  Figure out the black bars issue on henry's phone.
 
-[ ]  ERROR HANDLING - Notify user of failed logins or signups via UIAlertView
+[x]  ERROR HANDLING - Notify user of failed logins or signups via UIAlertView
 [x]  Import Cones Logo font and use everywhere
-[ ]  Add loading icons for logins/etc.
+[x]  Add loading icons for logins/etc.
 [x]  Update UI for login pages
 [ ]  Touch screen and hide keyboard on all views
 [ ]  Add fake ice cream truck locations for presentation
