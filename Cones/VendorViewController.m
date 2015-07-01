@@ -38,6 +38,7 @@
     self.currentUser = [PFUser currentUser];
     
     if(!self.currentUser) {
+        self.logoutButton.title = nil;
         [self performSegueWithIdentifier:@"LoginUser" sender:self];
     }
     
@@ -47,6 +48,11 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self setupNavbar];
+    
+    self.currentUser = [PFUser currentUser];
+    if (self.currentUser){
+        self.logoutButton.title = @"Logout";
+    }
 
 }
 
@@ -59,6 +65,7 @@
     NSLog(@"This is the current user: %@", self.currentUser);
     
     if(self.currentUser) {
+
         [PFSession getCurrentSessionInBackgroundWithBlock:^(PFSession *session, NSError *error){
             
             if (error){

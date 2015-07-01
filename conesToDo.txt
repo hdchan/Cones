@@ -22,25 +22,22 @@ CONES -- TODO
 [x]  Add loading icons for logins/etc.
 [x]  Update UI for login pages
 [x]  Touch screen and hide keyboard on all views
-
-
-PRESENTATION LIST
-[ ]  Add fake ice cream truck locations for presentation
-[ ]  Revisit the zoom to new locations functionality - "i went to a new spot"
+[x]  Add fake ice cream truck locations for presentation
+[x]  Revisit the zoom to new locations functionality - "i went to a new spot"
+[x]  Only shows truck within radius.  If you zoom out, then zoom to another area, no trucks appear.
+[x]  Logout button should not be shown if user is logged in
 
 
 EXTRAS
 [ ]  Add text field validation for login and signup
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
-[ ]  Send location update only after X amount of feet.
+[ ]  Send location update only after X amount of feet (might fix the issue above^).
 [ ]  Determine how to handle removing ice cream trucks
-[ ]  Only shows truck within radius.  If you zoom out, then zoom to another area, no trucks appear.
 [ ]  Instruct user & vendor to go to settings if they decline gps use.
 [ ]  Add push notifications
 [ ]  Vendor editable
 [ ]  Have a vendor settings page w/ store hours to transmit/password/username/etc. updates
 [ ]  Set up retrieve vendor location w/ certain time frames 
 [ ]  Set PFObject parents instead of using a separate column
-[ ]  Logout button should not be shown if user is logged in
 [ ]  Need password validation (front end check). Parse currently accepts blank fields
 [ ]  Should implement email verifications?
