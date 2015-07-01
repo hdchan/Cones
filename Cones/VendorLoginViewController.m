@@ -8,6 +8,8 @@
 
 #import "VendorLoginViewController.h"
 #import <Parse/Parse.h>
+#import "MBProgressHUD.h"
+
 @interface VendorLoginViewController() <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -26,42 +28,53 @@
    
 }
 
-//- (void) registerUser {
-//   
-//        
-//    
-//    PFUser *user = [PFUser user];
-//    user.username = self.emailTextField.text;
-//    user.password = self.passwordTextFIeld.text;
-//    user.email = self.emailTextField.text;
-//    
-//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error) {   // Hooray! Let them use the app now.
-//            
-//            [self dismissViewControllerAnimated:YES completion:nil];
-//            
-//        } else {
-//            
-//            //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
-//        
-//        }
-//    }];
-//  
-//}
-
 - (void) loginUser {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // start progres hud
+    hud.labelText = @"Logging In";
+    
     
     [PFUser logInWithUsernameInBackground:self.emailTextField.text
                                  password:self.passwordTextFIeld.text
                                     block:^(PFUser *user, NSError *error) {
+                                        
+                                        [MBProgressHUD hideHUDForView:self.view animated:YES]; // stop progress hud
+                                        
                                         if (user) {
                                             // Do stuff after successful login.
+                                            
+                                            [self.view endEditing:YES];
                                             
                                             [self dismissViewControllerAnimated:YES completion:nil];
                                             
                                         } else {
                                             
                                             NSLog(@"Error loggin in: %@", error);
+                                            
+                                            if ([UIAlertController class]) { // iOS 8 and up
+                                                
+                                                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Failed attempt"
+                                                                                                               message:@"The email and password you entered don't match."
+                                                                                                        preferredStyle:UIAlertControllerStyleAlert];
+                                                
+                                                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Try again" style:UIAlertActionStyleDefault
+                                                                                                      handler:^(UIAlertAction * action) {}];
+                                                
+                                                [alert addAction:defaultAction];
+                                                [self presentViewController:alert animated:YES completion:nil];
+                                                
+                                            } else { // deprecated for iOS 8
+                                                
+                                                UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:@"Failed attempt"
+                                                                                                 message:@"The email and password you entered don't match."
+                                                                                                delegate:self
+                                                                                       cancelButtonTitle:@"Try again"
+                                                                                       otherButtonTitles: nil];
+                                                
+                                                [alert show];
+                                                
+                                            }
+                          
                                             
                                         }
                                     }];
@@ -73,7 +86,7 @@
 - (IBAction)loginTapped:(id)sender {
     
     [self loginUser];
-    
+
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
