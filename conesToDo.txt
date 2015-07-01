@@ -20,10 +20,11 @@ CONES -- TODO
 [x]  Import Cones Logo font and use everywhere
 [ ]  Add loading icons for logins/etc.
 [x]  Update UI for login pages
-[ ]  Touch screen and hide keyboard on all views
+[x]  Touch screen and hide keyboard on all views
 [ ]  Add fake ice cream truck locations for presentation
 [x]  Hide status bar
-[ ]  Change navbar text colors?
+[x]  Change navbar text colors?
+[ ]  Revisit the zoom to new locations functionality - "i went to a new spot"
 
 [ ]  Add text field validation for login and signup
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
@@ -31,3 +32,4 @@ CONES -- TODO
 [ ]  Determine how to handle removing ice cream trucks
 [ ]  App only shows truck within the radius.  If you zoom out, then zoom to another area, no trucks appear.
 [ ]  Instruct user & vendor to go to settings if they decline gps use.
+[ ]  Add push notifications

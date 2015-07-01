@@ -20,6 +20,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) PFUser *currentUser;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logoutButton;
 
 @end
 
@@ -31,6 +32,7 @@
     
     [super viewDidLoad];
     
+    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     self.currentUser = [PFUser currentUser];
@@ -41,8 +43,17 @@
     
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self setupNavbar];
+
+}
+
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
     NSLog(@"Location set: %i", self.currentVendorLocationSet);
     self.currentUser = [PFUser currentUser];
     NSLog(@"This is the current user: %@", self.currentUser);
@@ -193,6 +204,36 @@
     
     [PFUser logOut];
     [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+
+-(void)setupNavbar{
+    
+    [self.logoutButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                               [UIFont fontWithName:@"Sofia Pro" size:16.0f], NSFontAttributeName,
+                                               nil] forState:UIControlStateNormal];
+    // set back button font
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIFont fontWithName:@"Sofia Pro" size:16.0f], NSFontAttributeName,
+                                                          nil] forState:UIControlStateNormal];
+    
+    // unhide navbar
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+  
+    
+    // set title color and title font
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor], NSFontAttributeName: [UIFont fontWithName:@"Sofia Pro" size:16.0]};
+    
+    // set title
+    self.navigationItem.title = @"Nearby Ice Cream";
+    
+    
+
+    //set back button arrow color
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
+   
     
 }
 

@@ -415,6 +415,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="logoutButton" destination="8Dg-6a-rDQ" id="Csj-bs-ecR"/>
                         <outlet property="mapView" destination="PgJ-fE-Abe" id="Pdu-vq-Hsc"/>
                         <segue destination="Zvf-MT-vFb" kind="presentation" identifier="LoginUser" id="a0v-Pa-Cw3"/>
                     </connections>

@@ -27,9 +27,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:255.0/255 green:227.0/255 blue:193.0/255 alpha:1]];
+    
     self.mapView.delegate = self;
     
     // if pfuser exists, then it means the vendor is logged in
@@ -58,7 +56,44 @@
     
 }
 
+-(void)setupNavbar{
+    
+    
+    
+    // set back button font
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                          [UIFont fontWithName:@"Sofia Pro" size:16.0f], NSFontAttributeName,
+                                                          nil] forState:UIControlStateNormal];
+    
+    // unhide navbar
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+    
+    // set navbar background color
+ //   [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:255.0/255 green:227.0/255 blue:193.0/255 alpha:1]];
+    
+  
+    
+    // set title color and title font
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor blackColor], NSFontAttributeName: [UIFont fontWithName:@"Sofia Pro" size:16.0]};
+    
+    // set title
+    self.navigationItem.title = @"Nearby Ice Cream";
+
+    
+
+    //set back button arrow color
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+        [self setupNavbar];
+  
+
     //we could do an anonymous login. not sure if we want too.
 //    [PFAnonymousUtils logInWithBlock:^(PFUser *user, NSError *error) {
 //        if (error) {
@@ -168,7 +203,7 @@
     
     MKAnnotationView *pinView = nil;
 
-        static NSString *defaultPinID = @"com.invasivecode.pin";
+        static NSString *defaultPinID = @"com.cones";
         pinView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
 //    if ( pinView == nil ){
             pinView = [[MKAnnotationView alloc]
