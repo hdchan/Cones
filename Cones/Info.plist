@@ -23,9 +23,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Need to find you ice cream</string>
+	<string>We need your location to show customers where you are.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Testing Location Data</string>
+	<string>We need your location to show nearby ice cream trucks!</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
@@ -46,6 +46,10 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SofiaProLight.otf</string>
 	</array>
 </dict>
 </plist>

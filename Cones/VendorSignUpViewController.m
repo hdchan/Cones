@@ -63,6 +63,9 @@
                                                 
                                             }];
             
+        
+            
+            
             PFObject *vendorInformation = [PFObject objectWithClassName:@"VendorInformation"];
             vendorInformation[@"truckName"] = self.truckNameTextField.text;
             vendorInformation[@"userId"] = user.objectId;

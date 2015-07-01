@@ -17,9 +17,13 @@ CONES -- TODO
 [x]  Figure out the black bars issue on henry's phone.
 
 [ ]  ERROR HANDLING - Notify user of failed logins or signups via UIAlertView
-[ ]  Import Cones Logo font and use everywhere
+[x]  Import Cones Logo font and use everywhere
 [ ]  Add loading icons for logins/etc.
-[ ]  Update UI for login pages
+[x]  Update UI for login pages
+[ ]  Touch screen and hide keyboard on all views
+[ ]  Add fake ice cream truck locations for presentation
+[x]  Hide status bar
+[ ]  Change navbar text colors?
 
 [ ]  Add text field validation for login and signup
 [ ]  Vendor location stops emitting - i think - when app is in the background for x minutes
