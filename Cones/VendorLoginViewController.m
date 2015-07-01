@@ -8,6 +8,8 @@
 
 #import "VendorLoginViewController.h"
 #import <Parse/Parse.h>
+#import "MBProgressHUD.h"
+
 @interface VendorLoginViewController() <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
@@ -26,34 +28,18 @@
    
 }
 
-//- (void) registerUser {
-//   
-//        
-//    
-//    PFUser *user = [PFUser user];
-//    user.username = self.emailTextField.text;
-//    user.password = self.passwordTextFIeld.text;
-//    user.email = self.emailTextField.text;
-//    
-//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error) {   // Hooray! Let them use the app now.
-//            
-//            [self dismissViewControllerAnimated:YES completion:nil];
-//            
-//        } else {
-//            
-//            //NSString *errorString = [error userInfo][@"error"];   // Show the errorString somewhere and let the user try again.
-//        
-//        }
-//    }];
-//  
-//}
-
 - (void) loginUser {
+    
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // start progres hud
+    hud.labelText = @"Logging In";
+    
     
     [PFUser logInWithUsernameInBackground:self.emailTextField.text
                                  password:self.passwordTextFIeld.text
                                     block:^(PFUser *user, NSError *error) {
+                                        
+                                        [MBProgressHUD hideHUDForView:self.view animated:YES]; // stop progress hud
+                                        
                                         if (user) {
                                             // Do stuff after successful login.
                                             

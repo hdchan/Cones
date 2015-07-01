@@ -8,6 +8,7 @@
 
 #import "VendorSignUpViewController.h"
 #import <Parse/Parse.h>
+#import "MBProgressHUD.h"
 
 @interface VendorSignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *truckNameTextField;
@@ -32,6 +33,9 @@
 }
 - (IBAction)signUpButtonClicked:(id)sender {
     
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES]; // start progres hud
+    hud.labelText = @"Signing Up";
+    
     
     PFUser *user = [PFUser user];
     user.username = self.emailTextField.text;
@@ -46,6 +50,9 @@
             [PFUser logInWithUsernameInBackground:self.emailTextField.text
                                          password:self.passwordTextField.text
                                             block:^(PFUser *user, NSError *error) {
+                                                
+                                                [MBProgressHUD hideHUDForView:self.view animated:YES]; // stop progress hud
+                                                
                                                 if (user) {
                                                     // Do stuff after successful login.
                                                     NSLog(@"Logged in successfully!");
@@ -76,6 +83,8 @@
 
             
         } else {
+            
+            [MBProgressHUD hideHUDForView:self.view animated:YES]; // stop progress hud
             
             NSLog(@"Error signing up: %@", error);
             NSLog(@"%ld",(long)error.code); // maybe we can detect the code to be specific about the error

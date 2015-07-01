@@ -29,6 +29,7 @@
 		45D87C091B38676200FA1435 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C081B38676200FA1435 /* SystemConfiguration.framework */; };
 		45D87C0B1B38676900FA1435 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C0A1B38676900FA1435 /* libz.dylib */; };
 		45D87C0D1B38677200FA1435 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C0C1B38677200FA1435 /* libsqlite3.dylib */; };
+		720114DF1B444EA7006768E0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 720114DE1B444EA7006768E0 /* MBProgressHUD.m */; };
 		722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 722DDFED1B35226B00E7E03F /* MyAnnotation.m */; };
 		7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7272F4EE1B39EEAA00E98635 /* Vendor.m */; };
 		727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727D22741B3B5FDE00F0F15B /* VendorLoginViewController.m */; };
@@ -78,6 +79,8 @@
 		45D87C081B38676200FA1435 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		45D87C0A1B38676900FA1435 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		45D87C0C1B38677200FA1435 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		720114DD1B444EA7006768E0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		720114DE1B444EA7006768E0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		722DDFEC1B35226B00E7E03F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		722DDFED1B35226B00E7E03F /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		7272F4ED1B39EEAA00E98635 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
@@ -169,6 +172,15 @@
 			path = "parse-library-1.7.4";
 			sourceTree = "<group>";
 		};
+		720114DC1B444E8A006768E0 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				720114DD1B444EA7006768E0 /* MBProgressHUD.h */,
+				720114DE1B444EA7006768E0 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		72A855EC1B34C0FF00F4476C = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +223,7 @@
 				722DDFEC1B35226B00E7E03F /* MyAnnotation.h */,
 				722DDFED1B35226B00E7E03F /* MyAnnotation.m */,
 				72A855FF1B34C0FF00F4476C /* Cones.xcdatamodeld */,
+				720114DC1B444E8A006768E0 /* MBProgressHUD */,
 				45D87BEB1B3866C700FA1435 /* parse-library-1.7.4 */,
 				72A855F81B34C0FF00F4476C /* Supporting Files */,
 			);
@@ -354,6 +367,7 @@
 				722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */,
 				7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */,
 				451AB0F21B3E26C6000B4CB5 /* HomeViewController.m in Sources */,
+				720114DF1B444EA7006768E0 /* MBProgressHUD.m in Sources */,
 				459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */,
 				727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */,
 				72A855FB1B34C0FF00F4476C /* main.m in Sources */,
