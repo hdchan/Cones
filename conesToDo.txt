@@ -41,3 +41,5 @@ EXTRAS
 [ ]  Set PFObject parents instead of using a separate column
 [ ]  Need password validation (front end check). Parse currently accepts blank fields
 [ ]  Should implement email verifications?
+[ ]  Validate vendor identification
+[ ]  Allow users to rate nearby vendors/ social integration?
