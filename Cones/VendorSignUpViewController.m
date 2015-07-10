@@ -8,7 +8,7 @@
 
 #import "VendorSignUpViewController.h"
 #import <Parse/Parse.h>
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface VendorSignUpViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *truckNameTextField;

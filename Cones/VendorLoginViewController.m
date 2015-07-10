@@ -8,7 +8,7 @@
 
 #import "VendorLoginViewController.h"
 #import <Parse/Parse.h>
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface VendorLoginViewController() <UITextFieldDelegate>
 

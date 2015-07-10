@@ -16,7 +16,6 @@
 		45D87BF31B3866C700FA1435 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BED1B3866C700FA1435 /* Parse.framework */; };
 		45D87BF41B3866C700FA1435 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */; };
 		45D87BF51B3866C700FA1435 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BEF1B3866C700FA1435 /* ParseFacebookUtils.framework */; };
-		45D87BF61B3866C700FA1435 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BF01B3866C700FA1435 /* ParseFacebookUtilsV4.framework */; };
 		45D87BF71B3866C700FA1435 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BF11B3866C700FA1435 /* ParseUI.framework */; };
 		45D87BF91B3866FA00FA1435 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BF81B3866FA00FA1435 /* AudioToolbox.framework */; };
 		45D87BFB1B38670300FA1435 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87BFA1B38670300FA1435 /* CFNetwork.framework */; };
@@ -29,7 +28,6 @@
 		45D87C091B38676200FA1435 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C081B38676200FA1435 /* SystemConfiguration.framework */; };
 		45D87C0B1B38676900FA1435 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C0A1B38676900FA1435 /* libz.dylib */; };
 		45D87C0D1B38677200FA1435 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D87C0C1B38677200FA1435 /* libsqlite3.dylib */; };
-		720114DF1B444EA7006768E0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 720114DE1B444EA7006768E0 /* MBProgressHUD.m */; };
 		722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 722DDFED1B35226B00E7E03F /* MyAnnotation.m */; };
 		7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7272F4EE1B39EEAA00E98635 /* Vendor.m */; };
 		727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727D22741B3B5FDE00F0F15B /* VendorLoginViewController.m */; };
@@ -41,6 +39,9 @@
 		72A8560C1B34C0FF00F4476C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72A8560A1B34C0FF00F4476C /* LaunchScreen.xib */; };
 		72A856181B34C0FF00F4476C /* ConesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72A856171B34C0FF00F4476C /* ConesTests.m */; };
 		72A856221B34C1C200F4476C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A856211B34C1C200F4476C /* MapKit.framework */; };
+		72E6ABD21B50471000C432F2 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 72E6ABD11B50471000C432F2 /* libstdc++.6.dylib */; };
+		72E6ABD51B50472600C432F2 /* FBMissingSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E6ABD41B50472600C432F2 /* FBMissingSymbols.m */; };
+		9CF666FCFA8AA6D6831DC35A /* libPods-Cones.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1683775CD76A2652FBA48AA1 /* libPods-Cones.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1683775CD76A2652FBA48AA1 /* libPods-Cones.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cones.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		447F9CD8245A4F095A747AF7 /* Pods-Cones.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cones.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cones/Pods-Cones.debug.xcconfig"; sourceTree = "<group>"; };
 		451AB0EA1B3DC943000B4CB5 /* VendorSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VendorSignUpViewController.h; sourceTree = "<group>"; };
 		451AB0EB1B3DC943000B4CB5 /* VendorSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VendorSignUpViewController.m; sourceTree = "<group>"; };
 		451AB0F01B3E26C6000B4CB5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
@@ -66,7 +69,6 @@
 		45D87BED1B3866C700FA1435 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		45D87BEF1B3866C700FA1435 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
-		45D87BF01B3866C700FA1435 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
 		45D87BF11B3866C700FA1435 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		45D87BF81B3866FA00FA1435 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		45D87BFA1B38670300FA1435 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -79,8 +81,6 @@
 		45D87C081B38676200FA1435 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		45D87C0A1B38676900FA1435 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		45D87C0C1B38677200FA1435 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		720114DD1B444EA7006768E0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		720114DE1B444EA7006768E0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		722DDFEC1B35226B00E7E03F /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
 		722DDFED1B35226B00E7E03F /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		7272F4ED1B39EEAA00E98635 /* Vendor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vendor.h; sourceTree = "<group>"; };
@@ -101,6 +101,10 @@
 		72A856161B34C0FF00F4476C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A856171B34C0FF00F4476C /* ConesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConesTests.m; sourceTree = "<group>"; };
 		72A856211B34C1C200F4476C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		72E6ABD11B50471000C432F2 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		72E6ABD31B50472600C432F2 /* FBMissingSymbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBMissingSymbols.h; sourceTree = "<group>"; };
+		72E6ABD41B50472600C432F2 /* FBMissingSymbols.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBMissingSymbols.m; sourceTree = "<group>"; };
+		92E237AE1E386AB2E258A5FD /* Pods-Cones.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cones.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cones/Pods-Cones.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E6ABD21B50471000C432F2 /* libstdc++.6.dylib in Frameworks */,
 				45D87C0D1B38677200FA1435 /* libsqlite3.dylib in Frameworks */,
 				45D87C0B1B38676900FA1435 /* libz.dylib in Frameworks */,
 				45D87C091B38676200FA1435 /* SystemConfiguration.framework in Frameworks */,
@@ -122,10 +127,10 @@
 				72A856221B34C1C200F4476C /* MapKit.framework in Frameworks */,
 				45D87BF31B3866C700FA1435 /* Parse.framework in Frameworks */,
 				45D87BF71B3866C700FA1435 /* ParseUI.framework in Frameworks */,
-				45D87BF61B3866C700FA1435 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				45D87BF21B3866C700FA1435 /* Bolts.framework in Frameworks */,
 				45D87BF51B3866C700FA1435 /* ParseFacebookUtils.framework in Frameworks */,
 				45D87BF41B3866C700FA1435 /* ParseCrashReporting.framework in Frameworks */,
+				9CF666FCFA8AA6D6831DC35A /* libPods-Cones.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,19 +171,9 @@
 				45D87BED1B3866C700FA1435 /* Parse.framework */,
 				45D87BEE1B3866C700FA1435 /* ParseCrashReporting.framework */,
 				45D87BEF1B3866C700FA1435 /* ParseFacebookUtils.framework */,
-				45D87BF01B3866C700FA1435 /* ParseFacebookUtilsV4.framework */,
 				45D87BF11B3866C700FA1435 /* ParseUI.framework */,
 			);
 			path = "parse-library-1.7.4";
-			sourceTree = "<group>";
-		};
-		720114DC1B444E8A006768E0 /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				720114DD1B444EA7006768E0 /* MBProgressHUD.h */,
-				720114DE1B444EA7006768E0 /* MBProgressHUD.m */,
-			);
-			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		72A855EC1B34C0FF00F4476C = {
@@ -187,6 +182,8 @@
 				72A855F71B34C0FF00F4476C /* Cones */,
 				72A856141B34C0FF00F4476C /* ConesTests */,
 				72A855F61B34C0FF00F4476C /* Products */,
+				E7221F89FA3D4FB82714BE68 /* Pods */,
+				C400C4FE6A68FD1B9BBE3452 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -223,7 +220,8 @@
 				722DDFEC1B35226B00E7E03F /* MyAnnotation.h */,
 				722DDFED1B35226B00E7E03F /* MyAnnotation.m */,
 				72A855FF1B34C0FF00F4476C /* Cones.xcdatamodeld */,
-				720114DC1B444E8A006768E0 /* MBProgressHUD */,
+				72E6ABD31B50472600C432F2 /* FBMissingSymbols.h */,
+				72E6ABD41B50472600C432F2 /* FBMissingSymbols.m */,
 				45D87BEB1B3866C700FA1435 /* parse-library-1.7.4 */,
 				72A855F81B34C0FF00F4476C /* Supporting Files */,
 			);
@@ -257,6 +255,24 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C400C4FE6A68FD1B9BBE3452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72E6ABD11B50471000C432F2 /* libstdc++.6.dylib */,
+				1683775CD76A2652FBA48AA1 /* libPods-Cones.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7221F89FA3D4FB82714BE68 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				447F9CD8245A4F095A747AF7 /* Pods-Cones.debug.xcconfig */,
+				92E237AE1E386AB2E258A5FD /* Pods-Cones.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72A8561B1B34C0FF00F4476C /* Build configuration list for PBXNativeTarget "Cones" */;
 			buildPhases = (
+				FFA38D3C29E520804354091D /* Check Pods Manifest.lock */,
 				72A855F11B34C0FF00F4476C /* Sources */,
 				72A855F21B34C0FF00F4476C /* Frameworks */,
 				72A855F31B34C0FF00F4476C /* Resources */,
+				2C34DE00774760BB2F69C5B3 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -358,16 +376,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C34DE00774760BB2F69C5B3 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cones/Pods-Cones-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FFA38D3C29E520804354091D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		72A855F11B34C0FF00F4476C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E6ABD51B50472600C432F2 /* FBMissingSymbols.m in Sources */,
 				72A855FE1B34C0FF00F4476C /* AppDelegate.m in Sources */,
 				722DDFEE1B35226B00E7E03F /* MyAnnotation.m in Sources */,
 				7272F4EF1B39EEAA00E98635 /* Vendor.m in Sources */,
 				451AB0F21B3E26C6000B4CB5 /* HomeViewController.m in Sources */,
-				720114DF1B444EA7006768E0 /* MBProgressHUD.m in Sources */,
 				459138CA1B39C43E00293E5C /* VendorViewController.m in Sources */,
 				727D22751B3B5FDE00F0F15B /* VendorLoginViewController.m in Sources */,
 				72A855FB1B34C0FF00F4476C /* main.m in Sources */,
@@ -499,6 +550,7 @@
 		};
 		72A8561C1B34C0FF00F4476C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 447F9CD8245A4F095A747AF7 /* Pods-Cones.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -516,6 +568,7 @@
 		};
 		72A8561D1B34C0FF00F4476C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E237AE1E386AB2E258A5FD /* Pods-Cones.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
